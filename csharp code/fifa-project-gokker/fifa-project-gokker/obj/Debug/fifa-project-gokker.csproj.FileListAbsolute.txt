@@ -1,0 +1,10 @@
+D:\Radius\L1_P4\PROJECT\fifa project\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\bin\Debug\fifa-project-gokker.exe.config
+D:\Radius\L1_P4\PROJECT\fifa project\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\bin\Debug\fifa-project-gokker.exe
+D:\Radius\L1_P4\PROJECT\fifa project\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\bin\Debug\fifa-project-gokker.pdb
+D:\Radius\L1_P4\PROJECT\fifa project\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\obj\Debug\fifa-project-gokker.csprojAssemblyReference.cache
+D:\Radius\L1_P4\PROJECT\fifa project\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\obj\Debug\fifa_project_gokker.Form1.resources
+D:\Radius\L1_P4\PROJECT\fifa project\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\obj\Debug\fifa_project_gokker.Properties.Resources.resources
+D:\Radius\L1_P4\PROJECT\fifa project\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\obj\Debug\fifa-project-gokker.csproj.GenerateResource.cache
+D:\Radius\L1_P4\PROJECT\fifa project\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\obj\Debug\fifa-project-gokker.csproj.CoreCompileInputs.cache
+D:\Radius\L1_P4\PROJECT\fifa project\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\obj\Debug\fifa-project-gokker.exe
+D:\Radius\L1_P4\PROJECT\fifa project\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\obj\Debug\fifa-project-gokker.pdb
