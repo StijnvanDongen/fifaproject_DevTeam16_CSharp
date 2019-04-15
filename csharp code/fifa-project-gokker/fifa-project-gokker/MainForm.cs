@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,6 +14,8 @@ namespace fifa_project_gokker
 {
     public partial class MainForm : Form
     {
+        const string API_URL = "http://mennovermeulen.ga/api/apihandler.php";
+
         public MainForm()
         {
             InitializeComponent();
@@ -33,6 +37,30 @@ namespace fifa_project_gokker
             loginForm.ShowDialog();
 
             makeBetGroupBox.Enabled = true;
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            loadTeams();
+        }
+
+        public void loadTeams()
+        {
+            WebClient client = new WebClient();
+            string json = client.DownloadString(API_URL);
+
+            data[] teams = JsonConvert.DeserializeObject<data[]>(json);
+
+            foreach (data team in teams)
+            {
+                teamsListBox.Items.Add(team.teamName);
+            }
+        }
+
+        private void reloadTeamListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            teamsListBox.Items.Clear();
+            loadTeams();
         }
     }
 }
