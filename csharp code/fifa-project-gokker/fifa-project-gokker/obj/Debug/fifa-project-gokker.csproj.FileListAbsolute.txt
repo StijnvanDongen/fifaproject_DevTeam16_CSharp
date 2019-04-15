@@ -8,3 +8,14 @@ D:\Radius\L1_P4\PROJECT\fifa project\fifaproject_DevTeam16_CSharp\csharp code\fi
 D:\Radius\L1_P4\PROJECT\fifa project\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\obj\Debug\fifa-project-gokker.csproj.CoreCompileInputs.cache
 D:\Radius\L1_P4\PROJECT\fifa project\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\obj\Debug\fifa-project-gokker.exe
 D:\Radius\L1_P4\PROJECT\fifa project\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\obj\Debug\fifa-project-gokker.pdb
+C:\Users\Floris\Desktop\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\bin\Debug\fifa-project-gokker.exe.config
+C:\Users\Floris\Desktop\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\bin\Debug\fifa-project-gokker.exe
+C:\Users\Floris\Desktop\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\bin\Debug\fifa-project-gokker.pdb
+C:\Users\Floris\Desktop\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\obj\Debug\fifa-project-gokker.csprojAssemblyReference.cache
+C:\Users\Floris\Desktop\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\obj\Debug\fifa_project_gokker.LoginForm.resources
+C:\Users\Floris\Desktop\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\obj\Debug\fifa_project_gokker.MainForm.resources
+C:\Users\Floris\Desktop\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\obj\Debug\fifa_project_gokker.Properties.Resources.resources
+C:\Users\Floris\Desktop\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\obj\Debug\fifa-project-gokker.csproj.GenerateResource.cache
+C:\Users\Floris\Desktop\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\obj\Debug\fifa-project-gokker.csproj.CoreCompileInputs.cache
+C:\Users\Floris\Desktop\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\obj\Debug\fifa-project-gokker.exe
+C:\Users\Floris\Desktop\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\obj\Debug\fifa-project-gokker.pdb
