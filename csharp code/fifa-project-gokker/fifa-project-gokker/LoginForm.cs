@@ -29,7 +29,10 @@ namespace fifa_project_gokker
             }
             if (userNameTextBox.Text != "" && emailTextBox.Text != "")
             {
-                
+
+
+                Program.isLoggedIn = true;
+                this.Close();
             }
         }
     }

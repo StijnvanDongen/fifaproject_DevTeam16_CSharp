@@ -36,7 +36,10 @@ namespace fifa_project_gokker
             LoginForm loginForm = new LoginForm();
             loginForm.ShowDialog();
 
-            makeBetGroupBox.Enabled = true;
+            if (Program.isLoggedIn)
+            {
+                makeBetGroupBox.Enabled = true;
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)

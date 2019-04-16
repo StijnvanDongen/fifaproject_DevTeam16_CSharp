@@ -8,6 +8,8 @@ namespace fifa_project_gokker
 {
     static class Program
     {
+        public static bool isLoggedIn = false;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
