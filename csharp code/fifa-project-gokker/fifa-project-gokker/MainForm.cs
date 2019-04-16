@@ -42,6 +42,7 @@ namespace fifa_project_gokker
         private void MainForm_Load(object sender, EventArgs e)
         {
             loadTeams();
+            loadTypes();
         }
 
         public void loadTeams()
@@ -68,6 +69,30 @@ namespace fifa_project_gokker
         {
             teamsListBox.Items.Clear();
             loadTeams();
+        }
+
+        public void loadTypes()
+        {
+            string[] types = new string[2];
+            types[0] = "Double or Nothing";
+            types[1] = "Tripple or Nothing";
+
+            typeBetComboBox.Items.Add(types[0]);
+            typeBetComboBox.Items.Add(types[1]);
+        }
+
+        private void typeBetComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (typeBetComboBox.SelectedItem.ToString() == "Double or Nothing")
+            {
+                endScoreTeam1Numeric.Enabled = false;
+                endScoreTeam2Numeric.Enabled = false;
+            }
+            if (typeBetComboBox.SelectedItem.ToString() == "Tripple or Nothing")
+            {
+                endScoreTeam1Numeric.Enabled = true;
+                endScoreTeam2Numeric.Enabled = true;
+            }
         }
     }
 }

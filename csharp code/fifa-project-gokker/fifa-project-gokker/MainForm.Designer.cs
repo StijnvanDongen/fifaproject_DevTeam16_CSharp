@@ -166,6 +166,7 @@
             this.typeBetComboBox.Name = "typeBetComboBox";
             this.typeBetComboBox.Size = new System.Drawing.Size(121, 21);
             this.typeBetComboBox.TabIndex = 2;
+            this.typeBetComboBox.SelectedIndexChanged += new System.EventHandler(this.typeBetComboBox_SelectedIndexChanged);
             // 
             // typeBetLabel
             // 
@@ -230,7 +231,7 @@
             // reloadTeamListToolStripMenuItem
             // 
             this.reloadTeamListToolStripMenuItem.Name = "reloadTeamListToolStripMenuItem";
-            this.reloadTeamListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reloadTeamListToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.reloadTeamListToolStripMenuItem.Text = "reload team list";
             this.reloadTeamListToolStripMenuItem.Click += new System.EventHandler(this.reloadTeamListToolStripMenuItem_Click);
             // 
