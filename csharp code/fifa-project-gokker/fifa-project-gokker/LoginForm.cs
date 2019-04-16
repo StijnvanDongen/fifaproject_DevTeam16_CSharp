@@ -23,11 +23,11 @@ namespace fifa_project_gokker
             {
                 MessageBox.Show("Vul een Gebruikersnaam");
             }
-            if (emailTextBox.Text == "")
+            if (passwordTextBox.Text == "")
             {
                 MessageBox.Show("Vul een E-mailadres in");
             }
-            if (userNameTextBox.Text != "" && emailTextBox.Text != "")
+            if (userNameTextBox.Text != "" && passwordTextBox.Text != "")
             {
 
 
