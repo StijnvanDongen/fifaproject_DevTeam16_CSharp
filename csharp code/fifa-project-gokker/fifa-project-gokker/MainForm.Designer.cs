@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.teamsListBox = new System.Windows.Forms.ListBox();
-            this.BetsGroupBox = new System.Windows.Forms.GroupBox();
             this.makeBetGroupBox = new System.Windows.Forms.GroupBox();
             this.makeBetButton = new System.Windows.Forms.Button();
             this.endScoreTeam2Numeric = new System.Windows.Forms.NumericUpDown();
@@ -48,6 +47,8 @@
             this.logInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.teamsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reloadTeamListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tournamentsListBox = new System.Windows.Forms.ListBox();
+            this.betsListBox = new System.Windows.Forms.ListBox();
             this.makeBetGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.endScoreTeam2Numeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.endScoreTeam1Numeric)).BeginInit();
@@ -62,15 +63,6 @@
             this.teamsListBox.Name = "teamsListBox";
             this.teamsListBox.Size = new System.Drawing.Size(150, 225);
             this.teamsListBox.TabIndex = 1;
-            // 
-            // BetsGroupBox
-            // 
-            this.BetsGroupBox.Location = new System.Drawing.Point(170, 28);
-            this.BetsGroupBox.Name = "BetsGroupBox";
-            this.BetsGroupBox.Size = new System.Drawing.Size(618, 225);
-            this.BetsGroupBox.TabIndex = 2;
-            this.BetsGroupBox.TabStop = false;
-            this.BetsGroupBox.Text = "Gemaakte Weddenschappen";
             // 
             // makeBetGroupBox
             // 
@@ -236,13 +228,30 @@
             this.reloadTeamListToolStripMenuItem.Text = "reload team list";
             this.reloadTeamListToolStripMenuItem.Click += new System.EventHandler(this.reloadTeamListToolStripMenuItem_Click);
             // 
+            // tournamentsListBox
+            // 
+            this.tournamentsListBox.FormattingEnabled = true;
+            this.tournamentsListBox.Location = new System.Drawing.Point(169, 28);
+            this.tournamentsListBox.Name = "tournamentsListBox";
+            this.tournamentsListBox.Size = new System.Drawing.Size(150, 225);
+            this.tournamentsListBox.TabIndex = 5;
+            // 
+            // betsListBox
+            // 
+            this.betsListBox.FormattingEnabled = true;
+            this.betsListBox.Location = new System.Drawing.Point(325, 28);
+            this.betsListBox.Name = "betsListBox";
+            this.betsListBox.Size = new System.Drawing.Size(463, 225);
+            this.betsListBox.TabIndex = 6;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 369);
+            this.Controls.Add(this.betsListBox);
+            this.Controls.Add(this.tournamentsListBox);
             this.Controls.Add(this.makeBetGroupBox);
-            this.Controls.Add(this.BetsGroupBox);
             this.Controls.Add(this.teamsListBox);
             this.Controls.Add(this.menuStrip1);
             this.MaximizeBox = false;
@@ -264,7 +273,6 @@
 
         #endregion
         private System.Windows.Forms.ListBox teamsListBox;
-        private System.Windows.Forms.GroupBox BetsGroupBox;
         private System.Windows.Forms.GroupBox makeBetGroupBox;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
@@ -283,6 +291,8 @@
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.ToolStripMenuItem teamsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reloadTeamListToolStripMenuItem;
+        private System.Windows.Forms.ListBox tournamentsListBox;
+        private System.Windows.Forms.ListBox betsListBox;
     }
 }
 
