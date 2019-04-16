@@ -101,6 +101,7 @@
             this.makeBetButton.TabIndex = 10;
             this.makeBetButton.Text = "Maak Weddenschap";
             this.makeBetButton.UseVisualStyleBackColor = true;
+            this.makeBetButton.Click += new System.EventHandler(this.makeBetButton_Click);
             // 
             // endScoreTeam2Numeric
             // 

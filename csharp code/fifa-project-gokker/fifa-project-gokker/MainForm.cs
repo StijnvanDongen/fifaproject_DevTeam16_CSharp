@@ -94,5 +94,39 @@ namespace fifa_project_gokker
                 endScoreTeam2Numeric.Enabled = true;
             }
         }
+
+        private void makeBetButton_Click(object sender, EventArgs e)
+        {
+            if (typeBetComboBox.SelectedItem == null)
+            {
+                MessageBox.Show("Vul een weddenschap type in");
+            }
+
+            if (typeBetComboBox.SelectedItem != null && 
+                amountNumeric.Value == 0 && 
+                typeBetComboBox.SelectedItem.ToString() == "Double or Nothing")
+            {
+                MessageBox.Show("Vul een inzet in van minimaal 5");
+            }
+
+            if (typeBetComboBox.SelectedItem != null && 
+                amountNumeric.Value == 0 && 
+                typeBetComboBox.SelectedItem.ToString() == "Tripple or Nothing")
+            {
+                MessageBox.Show("Vul een inzet in van minimaal 15");
+            }
+
+            if (typeBetComboBox.SelectedItem != null && 
+                winningTeamComboBox.SelectedItem == null)
+            {
+                MessageBox.Show("Vul het winnende team in");
+            }
+
+            if (typeBetComboBox.SelectedItem != null &&
+                typeBetComboBox.SelectedItem.ToString() == "Tripple or Nothing")
+            {
+                MessageBox.Show("Vul de eindscore in");
+            }
+        }
     }
 }
