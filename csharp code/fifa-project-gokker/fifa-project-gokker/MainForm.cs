@@ -46,14 +46,21 @@ namespace fifa_project_gokker
 
         public void loadTeams()
         {
-            WebClient client = new WebClient();
-            string json = client.DownloadString(API_URL);
-
-            data[] teams = JsonConvert.DeserializeObject<data[]>(json);
-
-            foreach (data team in teams)
+            try
             {
-                teamsListBox.Items.Add(team.teamName);
+                WebClient client = new WebClient();
+                string json = client.DownloadString(API_URL);
+
+                data[] teams = JsonConvert.DeserializeObject<data[]>(json);
+
+                foreach (data team in teams)
+                {
+                    teamsListBox.Items.Add(team.teamName);
+                }
+            }
+            catch (System.Net.WebException)
+            {
+                MessageBox.Show("Je hebt geen internet verbinding!");
             }
         }
 
