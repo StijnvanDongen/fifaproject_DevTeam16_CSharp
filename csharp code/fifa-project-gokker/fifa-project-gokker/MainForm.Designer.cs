@@ -44,9 +44,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sluitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.teamsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reloadTeamListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loginToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tournamentsListBox = new System.Windows.Forms.ListBox();
             this.betsListBox = new System.Windows.Forms.ListBox();
             this.makeBetGroupBox.SuspendLayout();
@@ -183,7 +183,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.teamsToolStripMenuItem});
+            this.teamsToolStripMenuItem,
+            this.loginToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -193,8 +194,7 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sluitenToolStripMenuItem,
-            this.logInToolStripMenuItem});
+            this.sluitenToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -202,16 +202,9 @@
             // sluitenToolStripMenuItem
             // 
             this.sluitenToolStripMenuItem.Name = "sluitenToolStripMenuItem";
-            this.sluitenToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.sluitenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sluitenToolStripMenuItem.Text = "Sluiten";
             this.sluitenToolStripMenuItem.Click += new System.EventHandler(this.sluitenToolStripMenuItem_Click);
-            // 
-            // logInToolStripMenuItem
-            // 
-            this.logInToolStripMenuItem.Name = "logInToolStripMenuItem";
-            this.logInToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
-            this.logInToolStripMenuItem.Text = "Log In";
-            this.logInToolStripMenuItem.Click += new System.EventHandler(this.logInToolStripMenuItem_Click);
             // 
             // teamsToolStripMenuItem
             // 
@@ -227,6 +220,13 @@
             this.reloadTeamListToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.reloadTeamListToolStripMenuItem.Text = "reload team list";
             this.reloadTeamListToolStripMenuItem.Click += new System.EventHandler(this.reloadTeamListToolStripMenuItem_Click);
+            // 
+            // loginToolStripMenuItem1
+            // 
+            this.loginToolStripMenuItem1.Name = "loginToolStripMenuItem1";
+            this.loginToolStripMenuItem1.Size = new System.Drawing.Size(54, 20);
+            this.loginToolStripMenuItem1.Text = "Log-in";
+            this.loginToolStripMenuItem1.Click += new System.EventHandler(this.loginToolStripMenuItem1_Click);
             // 
             // tournamentsListBox
             // 
@@ -277,7 +277,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sluitenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logInToolStripMenuItem;
         private System.Windows.Forms.Button makeBetButton;
         private System.Windows.Forms.NumericUpDown endScoreTeam2Numeric;
         private System.Windows.Forms.NumericUpDown endScoreTeam1Numeric;
@@ -293,6 +292,7 @@
         private System.Windows.Forms.ToolStripMenuItem reloadTeamListToolStripMenuItem;
         private System.Windows.Forms.ListBox tournamentsListBox;
         private System.Windows.Forms.ListBox betsListBox;
+        private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem1;
     }
 }
 

@@ -31,17 +31,6 @@ namespace fifa_project_gokker
             this.Close();
         }
 
-        private void logInToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LoginForm loginForm = new LoginForm();
-            loginForm.ShowDialog();
-
-            if (Program.isLoggedIn)
-            {
-                makeBetGroupBox.Enabled = true;
-            }
-        }
-
         private void MainForm_Load(object sender, EventArgs e)
         {
             loadTeams();
@@ -129,6 +118,17 @@ namespace fifa_project_gokker
                 typeBetComboBox.SelectedItem.ToString() == "Tripple or Nothing")
             {
                 MessageBox.Show("Vul de eindscore in");
+            }
+        }
+
+        private void loginToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.ShowDialog();
+
+            if (Program.isLoggedIn)
+            {
+                makeBetGroupBox.Enabled = true;
             }
         }
     }
