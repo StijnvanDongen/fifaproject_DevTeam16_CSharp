@@ -9,6 +9,7 @@ namespace fifa_project_gokker
     static class Program
     {
         public static bool isLoggedIn = false;
+        public static List<dataUsers> userslist = new List<dataUsers>();
 
         /// <summary>
         /// The main entry point for the application.

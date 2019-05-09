@@ -28,3 +28,6 @@ C:\Users\Floris\Desktop\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-go
 C:\Users\Floris\Desktop\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\bin\Debug\Newtonsoft.Json.pdb
 C:\Users\Floris\Desktop\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Floris\Desktop\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\obj\Debug\fifa-project-gokker.csproj.CopyComplete
+C:\Users\Floris\Desktop\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\bin\Debug\CryptSharp.dll
+C:\Users\Floris\Desktop\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\bin\Debug\CryptSharp.xml
+C:\Users\Floris\Desktop\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\bin\Debug\CryptSharp.pdb

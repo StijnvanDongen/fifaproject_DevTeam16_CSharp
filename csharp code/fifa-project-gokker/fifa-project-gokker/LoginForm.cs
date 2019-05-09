@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CryptSharp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,10 +30,38 @@ namespace fifa_project_gokker
             }
             if (userNameTextBox.Text != "" && passwordTextBox.Text != "")
             {
-
-
-                Program.isLoggedIn = true;
-                this.Close();
+                int x = 0;
+                for ( int i = 0; i < Program.userslist.Count; i++)
+                {
+                    if ( Program.userslist[i].userName == userNameTextBox.Text )
+                    {
+                        if ( Crypter.CheckPassword( passwordTextBox.Text, Program.userslist[i].password ) )
+                        {
+                            Program.isLoggedIn = true;
+                            i = Program.userslist.Count;
+                        }
+                        else
+                        {
+                            x = 1;
+                            i = Program.userslist.Count;
+                        }
+                    }
+                    else
+                    {
+                        x = 1;
+                        i = Program.userslist.Count;
+                    }
+                }
+                if ( x == 1 )
+                {
+                    userNameTextBox.Text = "";
+                    passwordTextBox.Text = "";
+                    MessageBox.Show("Gebruikersnaam of wachtwoord is ongeldig");
+                }
+                else
+                {
+                    this.Close();
+                }
             }
         }
     }

@@ -15,6 +15,7 @@ namespace fifa_project_gokker
     public partial class MainForm : Form
     {
         const string API_URL = "http://mennovermeulen.ga/api/apihandler.php";
+        const string LOGINAPI_URL = "http://mennovermeulen.ga/api/loginapi.php";
 
         public MainForm()
         {
@@ -34,6 +35,7 @@ namespace fifa_project_gokker
         private void MainForm_Load(object sender, EventArgs e)
         {
             loadTeams();
+            loadUsers();
             loadTypes();
         }
 
@@ -50,6 +52,27 @@ namespace fifa_project_gokker
                 {
                     teamsListBox.Items.Add(team.teamName);
                 }
+            }
+            catch (System.Net.WebException)
+            {
+                MessageBox.Show("Je hebt geen internet verbinding!");
+            }
+        }
+
+        public void loadUsers()
+        {
+            try
+            {
+                WebClient webClient = new WebClient();
+                string userjson = webClient.DownloadString(LOGINAPI_URL);
+
+                dataUsers[] users = JsonConvert.DeserializeObject<dataUsers[]>(userjson);
+
+                foreach (dataUsers user in users)
+                {
+                    Program.userslist.Add(user);
+                }
+
             }
             catch (System.Net.WebException)
             {
