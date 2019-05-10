@@ -30,7 +30,6 @@ namespace fifa_project_gokker
             }
             if (userNameTextBox.Text != "" && passwordTextBox.Text != "")
             {
-                int x = 0;
                 for ( int i = 0; i < Program.userslist.Count; i++)
                 {
                     if ( Program.userslist[i].userName == userNameTextBox.Text )
@@ -41,12 +40,10 @@ namespace fifa_project_gokker
                         }
                         else
                         {
-                            x = 1;
                         }
                     }
                     else
                     {
-                        x = 1;
                     }
                 }
                 if ( Program.isLoggedIn == false )

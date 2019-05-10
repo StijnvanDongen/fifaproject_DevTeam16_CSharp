@@ -51,11 +51,23 @@ namespace fifa_project_gokker
                 foreach (data team in teams)
                 {
                     teamsListBox.Items.Add(team.teamName);
-                }
+                } 
             }
             catch (System.Net.WebException)
             {
                 MessageBox.Show("Je hebt geen internet verbinding!");
+            }
+            catch (System.ArgumentNullException)
+            {
+                MessageBox.Show("Er is geen api_url opgegeven");
+            }
+            catch (System.ArgumentException)
+            {
+                MessageBox.Show("Het pad heeft een ongeldige indeling. er moet een andere api link ingevuld worden");
+            }
+            catch (Newtonsoft.Json.JsonReaderException)
+            {
+                MessageBox.Show("Unexpected character encountered, er is een foute api link aangegeven");
             }
         }
 
