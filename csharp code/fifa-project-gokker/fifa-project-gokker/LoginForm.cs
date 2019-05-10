@@ -38,21 +38,18 @@ namespace fifa_project_gokker
                         if ( Crypter.CheckPassword( passwordTextBox.Text, Program.userslist[i].password ) )
                         {
                             Program.isLoggedIn = true;
-                            i = Program.userslist.Count;
                         }
                         else
                         {
                             x = 1;
-                            i = Program.userslist.Count;
                         }
                     }
                     else
                     {
                         x = 1;
-                        i = Program.userslist.Count;
                     }
                 }
-                if ( x == 1 )
+                if ( Program.isLoggedIn == false )
                 {
                     userNameTextBox.Text = "";
                     passwordTextBox.Text = "";

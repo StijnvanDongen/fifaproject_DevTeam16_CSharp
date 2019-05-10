@@ -31,3 +31,6 @@ C:\Users\Floris\Desktop\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-go
 C:\Users\Floris\Desktop\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\bin\Debug\CryptSharp.dll
 C:\Users\Floris\Desktop\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\bin\Debug\CryptSharp.xml
 C:\Users\Floris\Desktop\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\bin\Debug\CryptSharp.pdb
+D:\Radius\L1_P4\PROJECT\fifa project\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\bin\Debug\CryptSharp.dll
+D:\Radius\L1_P4\PROJECT\fifa project\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\bin\Debug\CryptSharp.pdb
+D:\Radius\L1_P4\PROJECT\fifa project\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\bin\Debug\CryptSharp.xml
