@@ -16,6 +16,7 @@ namespace fifa_project_gokker
         public LoginForm()
         {
             InitializeComponent();
+            passwordTextBox.PasswordChar = '*';
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -26,7 +27,7 @@ namespace fifa_project_gokker
             }
             if (passwordTextBox.Text == "")
             {
-                MessageBox.Show("Vul een E-mailadres in");
+                MessageBox.Show("Vul een Wachtwoord in");
             }
             if (userNameTextBox.Text != "" && passwordTextBox.Text != "")
             {
