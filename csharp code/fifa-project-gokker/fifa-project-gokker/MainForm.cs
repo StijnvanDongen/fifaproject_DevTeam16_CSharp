@@ -16,6 +16,7 @@ namespace fifa_project_gokker
     {
         const string API_URL = "http://mennovermeulen.ga/api/apihandler.php";
         const string LOGINAPI_URL = "http://mennovermeulen.ga/api/loginapi.php";
+        const string WEDSTRIJDENAPI_URL = "http://mennovermeulen.ga/api/wedstrijdenapi.php";
 
         public MainForm()
         {
@@ -36,8 +37,11 @@ namespace fifa_project_gokker
         {
             loadTeams();
             loadUsers();
+            loadWedstrijden();
             loadTypes();
         }
+
+
 
         public void loadTeams()
         {
@@ -50,8 +54,14 @@ namespace fifa_project_gokker
 
                 foreach (data team in teams)
                 {
-                    teamsListBox.Items.Add(team.teamName);
+                    Program.teamList.Add(team);
                 } 
+
+                for ( int i = 0; i < Program.teamList.Count; i++)
+                {
+                    teamsListBox.Items.Add(Program.teamList[i].teamName);
+                }
+
             }
             catch (System.Net.WebException)
             {
@@ -70,6 +80,8 @@ namespace fifa_project_gokker
                 MessageBox.Show("Unexpected character encountered, er is een foute api link aangegeven");
             }
         }
+
+
 
         public void loadUsers()
         {
@@ -92,11 +104,44 @@ namespace fifa_project_gokker
             }
         }
 
+
+
+        public void loadWedstrijden()
+        {
+            try
+            {
+                WebClient webClient = new WebClient();
+                string wedstrijdenjson = webClient.DownloadString(WEDSTRIJDENAPI_URL);
+
+                dataWedstrijden[] wedstrijden = JsonConvert.DeserializeObject<dataWedstrijden[]>(wedstrijdenjson);
+
+                foreach (dataWedstrijden wedstrijd in wedstrijden)
+                {
+                    Program.wedstrijdlist.Add(wedstrijd);
+                }
+
+                for ( int i = 0; i < Program.wedstrijdlist.Count; i++ )
+                {
+                    string wedstrijd = String.Format("{0} - {1}", Program.wedstrijdlist[i].team1, Program.wedstrijdlist[i].team2);
+                    tournamentsListBox.Items.Add(wedstrijd);
+                }
+
+            }
+            catch (System.Net.WebException)
+            {
+                MessageBox.Show("Je hebt geen internet verbinding!");
+            }
+        }
+
+
+
         private void reloadTeamListToolStripMenuItem_Click(object sender, EventArgs e)
         {
             teamsListBox.Items.Clear();
             loadTeams();
         }
+
+
 
         public void loadTypes()
         {
@@ -107,6 +152,8 @@ namespace fifa_project_gokker
             typeBetComboBox.Items.Add(types[0]);
             typeBetComboBox.Items.Add(types[1]);
         }
+
+
 
         private void typeBetComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -121,6 +168,8 @@ namespace fifa_project_gokker
                 endScoreTeam2Numeric.Enabled = true;
             }
         }
+
+
 
         private void makeBetButton_Click(object sender, EventArgs e)
         {
@@ -155,6 +204,8 @@ namespace fifa_project_gokker
                 MessageBox.Show("Vul de eindscore in");
             }
         }
+
+
 
         private void loginToolStripMenuItem1_Click(object sender, EventArgs e)
         {

@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="data.cs" />
     <Compile Include="dataUsers.cs" />
+    <Compile Include="dataWedstrijden.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
