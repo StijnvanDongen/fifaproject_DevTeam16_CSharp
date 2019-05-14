@@ -19,7 +19,7 @@ namespace fifa_project_gokker
             passwordTextBox.PasswordChar = '*';
         }
 
-        private void loginButton_Click(object sender, EventArgs e)
+        public void loginButton_Click(object sender, EventArgs e)
         {
             if (userNameTextBox.Text == "")
             {
@@ -38,6 +38,7 @@ namespace fifa_project_gokker
                         if ( Crypter.CheckPassword( passwordTextBox.Text, Program.userslist[i].password ) )
                         {
                             Program.isLoggedIn = true;
+                            
                         }
                         else
                         {

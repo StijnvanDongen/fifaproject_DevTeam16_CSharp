@@ -19,7 +19,6 @@ C:\Users\Floris\Desktop\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-go
 C:\Users\Floris\Desktop\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\obj\Debug\fifa-project-gokker.exe
 C:\Users\Floris\Desktop\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\obj\Debug\fifa-project-gokker.pdb
 D:\Radius\L1_P4\PROJECT\fifa project\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\bin\Debug\Newtonsoft.Json.dll
-D:\Radius\L1_P4\PROJECT\fifa project\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\bin\Debug\Newtonsoft.Json.pdb
 D:\Radius\L1_P4\PROJECT\fifa project\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\bin\Debug\Newtonsoft.Json.xml
 D:\Radius\L1_P4\PROJECT\fifa project\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\obj\Debug\fifa_project_gokker.LoginForm.resources
 D:\Radius\L1_P4\PROJECT\fifa project\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\obj\Debug\fifa_project_gokker.MainForm.resources

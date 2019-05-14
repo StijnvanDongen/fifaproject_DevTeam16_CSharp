@@ -13,6 +13,8 @@ namespace fifa_project_gokker
         public static List<dataUsers> userslist = new List<dataUsers>();
         public static List<dataWedstrijden> wedstrijdlist = new List<dataWedstrijden>();
 
+        public static GokkerCollection gokkerCollection = new GokkerCollection();
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

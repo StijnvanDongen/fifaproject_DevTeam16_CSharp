@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -17,6 +18,8 @@ namespace fifa_project_gokker
         const string API_URL = "http://mennovermeulen.ga/api/apihandler.php";
         const string LOGINAPI_URL = "http://mennovermeulen.ga/api/loginapi.php";
         const string WEDSTRIJDENAPI_URL = "http://mennovermeulen.ga/api/wedstrijdenapi.php";
+        public string gokkerName = "";
+        public string JSON = "";
 
         public MainForm()
         {
@@ -30,6 +33,33 @@ namespace fifa_project_gokker
 
         private void sluitenToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //for (int i = 0; i < Program.gokkerCollection.gokkers.Count; i++)
+            //{
+            //    if (Program.gokkerCollection.gokkers[i].name == gokkerName)
+            //    {
+            //        JSON = JsonConvert.SerializeObject(Program.gokkerCollection.gokkers[i]);
+            //    }
+            //}
+            for (int i = 0; i < Program.gokkerCollection.gokkers.Count; i++)
+            {
+                if (JSON == "")
+                {
+                    JSON = JsonConvert.SerializeObject(Program.gokkerCollection.gokkers[i]);
+                }
+                else
+                {
+                    JSON = JSON + "," + JsonConvert.SerializeObject(Program.gokkerCollection.gokkers[i]);
+                }
+            }
+
+            string path = "savedData";
+
+            using (var tw = new StreamWriter(path, true))
+            {
+                tw.WriteLine(JSON.ToString());
+                tw.Close();
+            }
+
             this.Close();
         }
 
@@ -39,10 +69,9 @@ namespace fifa_project_gokker
             loadUsers();
             loadWedstrijden();
             loadTypes();
+            loadTeamsComboBox();
         }
-
-
-
+        
         public void loadTeams()
         {
             try
@@ -79,10 +108,10 @@ namespace fifa_project_gokker
             {
                 MessageBox.Show("Unexpected character encountered, er is een foute api link aangegeven");
             }
+
+            Program.teamList.Clear();
         }
-
-
-
+        
         public void loadUsers()
         {
             try
@@ -103,9 +132,7 @@ namespace fifa_project_gokker
                 MessageBox.Show("Je hebt geen internet verbinding!");
             }
         }
-
-
-
+        
         public void loadWedstrijden()
         {
             try
@@ -131,18 +158,19 @@ namespace fifa_project_gokker
             {
                 MessageBox.Show("Je hebt geen internet verbinding!");
             }
+
+            Program.wedstrijdlist.Clear();
         }
-
-
-
+        
         private void reloadTeamListToolStripMenuItem_Click(object sender, EventArgs e)
         {
             teamsListBox.Items.Clear();
             loadTeams();
+
+            winningTeamComboBox.Items.Clear();
+            loadTeamsComboBox();
         }
-
-
-
+        
         public void loadTypes()
         {
             string[] types = new string[2];
@@ -153,7 +181,16 @@ namespace fifa_project_gokker
             typeBetComboBox.Items.Add(types[1]);
         }
 
+        public void loadTeamsComboBox()
+        {
+            for (int i = 0; i < teamsListBox.Items.Count ; i++)
+            {
+                string[] teams = new string[teamsListBox.Items.Count];
+                teams[i] = teamsListBox.GetItemText(teamsListBox.Items[i]);
 
+                winningTeamComboBox.Items.Add(teams[i]);
+            }
+        }
 
         private void typeBetComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -168,21 +205,23 @@ namespace fifa_project_gokker
                 endScoreTeam2Numeric.Enabled = true;
             }
         }
-
-
-
+        
         private void makeBetButton_Click(object sender, EventArgs e)
         {
+            int counter = 0;
+
             if (typeBetComboBox.SelectedItem == null)
             {
                 MessageBox.Show("Vul een weddenschap type in");
+                counter = counter + 1;
             }
 
             if (typeBetComboBox.SelectedItem != null && 
-                amountNumeric.Value == 0 && 
+                amountNumeric.Value <= 4 && 
                 typeBetComboBox.SelectedItem.ToString() == "Double or Nothing")
             {
                 MessageBox.Show("Vul een inzet in van minimaal 5");
+                counter = counter + 1;
             }
 
             if (typeBetComboBox.SelectedItem != null && 
@@ -190,23 +229,60 @@ namespace fifa_project_gokker
                 typeBetComboBox.SelectedItem.ToString() == "Tripple or Nothing")
             {
                 MessageBox.Show("Vul een inzet in van minimaal 15");
+                counter = counter + 1;
             }
 
             if (typeBetComboBox.SelectedItem != null && 
                 winningTeamComboBox.SelectedItem == null)
             {
                 MessageBox.Show("Vul het winnende team in");
+                counter = counter + 1;
             }
 
             if (typeBetComboBox.SelectedItem != null &&
-                typeBetComboBox.SelectedItem.ToString() == "Tripple or Nothing")
+                typeBetComboBox.SelectedItem.ToString() == "Tripple or Nothing" &&
+                endScoreTeam1Numeric.Value <= -1 &&
+                endScoreTeam2Numeric.Value <= -1)
             {
                 MessageBox.Show("Vul de eindscore in");
+                counter = counter + 1;
+            }
+
+            if (counter == 0)
+            {
+                for (int i = 0; i < Program.gokkerCollection.gokkers.Count ; i++)
+                {
+                    if (Program.gokkerCollection.gokkers[i].name == gokkerName)
+                    {
+                        Program.gokkerCollection.gokkers[i].makebet(typeBetComboBox.GetItemText(typeBetComboBox.SelectedItem),
+                                       (int)amountNumeric.Value,
+                                       winningTeamComboBox.SelectedItem.ToString(),
+                                       (int)endScoreTeam1Numeric.Value,
+                                       (int)endScoreTeam2Numeric.Value);
+                        if (typeBetComboBox.GetItemText(typeBetComboBox.SelectedItem) == "Tripple or Nothing")
+                        {
+                            string newBet = typeBetComboBox.GetItemText(typeBetComboBox.SelectedItem) + " , " +
+                                        (int)amountNumeric.Value + " , " +
+                                        winningTeamComboBox.SelectedItem.ToString() + " , " +
+                                        (int)endScoreTeam1Numeric.Value + " , " +
+                                        (int)endScoreTeam2Numeric.Value;
+
+                            betsListBox.Items.Add(newBet);
+                        }
+
+                        if (typeBetComboBox.GetItemText(typeBetComboBox.SelectedItem) == "Double or Nothing")
+                        {
+                            string newBet = typeBetComboBox.GetItemText(typeBetComboBox.SelectedItem) + " , " +
+                                        (int)amountNumeric.Value + " , " +
+                                        winningTeamComboBox.SelectedItem.ToString();
+
+                            betsListBox.Items.Add(newBet);
+                        }
+                    }
+                }
             }
         }
-
-
-
+        
         private void loginToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm();
@@ -216,6 +292,13 @@ namespace fifa_project_gokker
             {
                 makeBetGroupBox.Enabled = true;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            gokkerName = gokkerNameTextBox.Text;
+
+            Program.gokkerCollection.makeGokker(gokkerName);
         }
     }
 }

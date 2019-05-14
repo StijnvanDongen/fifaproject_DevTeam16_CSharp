@@ -49,6 +49,9 @@
             this.loginToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tournamentsListBox = new System.Windows.Forms.ListBox();
             this.betsListBox = new System.Windows.Forms.ListBox();
+            this.gokkerNameTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.makeBetGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.endScoreTeam2Numeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.endScoreTeam1Numeric)).BeginInit();
@@ -78,7 +81,7 @@
             this.makeBetGroupBox.Controls.Add(this.typeBetLabel);
             this.makeBetGroupBox.Controls.Add(this.nameLabel);
             this.makeBetGroupBox.Enabled = false;
-            this.makeBetGroupBox.Location = new System.Drawing.Point(13, 260);
+            this.makeBetGroupBox.Location = new System.Drawing.Point(13, 290);
             this.makeBetGroupBox.Name = "makeBetGroupBox";
             this.makeBetGroupBox.Size = new System.Drawing.Size(775, 100);
             this.makeBetGroupBox.TabIndex = 3;
@@ -244,11 +247,41 @@
             this.betsListBox.Size = new System.Drawing.Size(463, 225);
             this.betsListBox.TabIndex = 6;
             // 
+            // gokkerNameTextBox
+            // 
+            this.gokkerNameTextBox.Location = new System.Drawing.Point(113, 262);
+            this.gokkerNameTextBox.Name = "gokkerNameTextBox";
+            this.gokkerNameTextBox.Size = new System.Drawing.Size(195, 20);
+            this.gokkerNameTextBox.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 265);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Gokker username:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(314, 261);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(109, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Maak Gokker aan";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 369);
+            this.ClientSize = new System.Drawing.Size(800, 402);
+            this.ControlBox = false;
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.gokkerNameTextBox);
             this.Controls.Add(this.betsListBox);
             this.Controls.Add(this.tournamentsListBox);
             this.Controls.Add(this.makeBetGroupBox);
@@ -293,6 +326,9 @@
         private System.Windows.Forms.ListBox tournamentsListBox;
         private System.Windows.Forms.ListBox betsListBox;
         private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem1;
+        private System.Windows.Forms.TextBox gokkerNameTextBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
