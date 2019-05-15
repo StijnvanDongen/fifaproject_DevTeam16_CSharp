@@ -33,26 +33,14 @@ namespace fifa_project_gokker
 
         private void sluitenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //for (int i = 0; i < Program.gokkerCollection.gokkers.Count; i++)
-            //{
-            //    if (Program.gokkerCollection.gokkers[i].name == gokkerName)
-            //    {
-            //        JSON = JsonConvert.SerializeObject(Program.gokkerCollection.gokkers[i]);
-            //    }
-            //}
-            for (int i = 0; i < Program.gokkerCollection.gokkers.Count; i++)
-            {
-                if (JSON == "")
-                {
-                    JSON = JsonConvert.SerializeObject(Program.gokkerCollection.gokkers[i]);
-                }
-                else
-                {
-                    JSON = JSON + "," + JsonConvert.SerializeObject(Program.gokkerCollection.gokkers[i]);
-                }
-            }
+            JSON = JsonConvert.SerializeObject(Program.gokkerCollection.gokkers);
 
             string path = "savedData";
+
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
 
             using (var tw = new StreamWriter(path, true))
             {
@@ -70,6 +58,32 @@ namespace fifa_project_gokker
             loadWedstrijden();
             loadTypes();
             loadTeamsComboBox();
+
+            string path = "savedData";
+
+            if (File.Exists(path))
+            {
+
+                List<gokker> LoadedData = null;
+
+                LoadedData = JsonConvert.DeserializeObject<List<gokker>>(File.ReadAllText(@"savedData"));
+
+                Program.gokkerCollection.gokkers = LoadedData;
+
+                for (int i = 0; i < Program.gokkerCollection.gokkers.Count; i++)
+                {
+                    for (int j = 0; j < Program.gokkerCollection.gokkers[i].weddenschappen.Count; j++)
+                    {
+                        string newBet = Program.gokkerCollection.gokkers[i].weddenschappen[j].type + " , " +
+                                            Program.gokkerCollection.gokkers[i].weddenschappen[j].inzet + " , " +
+                                            Program.gokkerCollection.gokkers[i].weddenschappen[j].winnendeTeam + " , " +
+                                            Program.gokkerCollection.gokkers[i].weddenschappen[j].eindscore1 + " , " +
+                                            Program.gokkerCollection.gokkers[i].weddenschappen[j].eindscore2;
+
+                        betsListBox.Items.Add(newBet);
+                    }
+                }
+            }
         }
         
         public void loadTeams()
