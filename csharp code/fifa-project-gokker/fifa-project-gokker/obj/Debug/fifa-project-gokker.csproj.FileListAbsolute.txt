@@ -40,7 +40,6 @@ C:\Users\stijn\OneDrive\Documenten\school\L1\periode 4\Project-Fifa\fifaproject_
 C:\Users\stijn\OneDrive\Documenten\school\L1\periode 4\Project-Fifa\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\bin\Debug\Newtonsoft.Json.dll
 C:\Users\stijn\OneDrive\Documenten\school\L1\periode 4\Project-Fifa\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\bin\Debug\CryptSharp.pdb
 C:\Users\stijn\OneDrive\Documenten\school\L1\periode 4\Project-Fifa\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\bin\Debug\CryptSharp.xml
-C:\Users\stijn\OneDrive\Documenten\school\L1\periode 4\Project-Fifa\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\bin\Debug\Newtonsoft.Json.pdb
 C:\Users\stijn\OneDrive\Documenten\school\L1\periode 4\Project-Fifa\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\bin\Debug\Newtonsoft.Json.xml
 C:\Users\stijn\OneDrive\Documenten\school\L1\periode 4\Project-Fifa\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\obj\Debug\fifa-project-gokker.csprojAssemblyReference.cache
 C:\Users\stijn\OneDrive\Documenten\school\L1\periode 4\Project-Fifa\fifaproject_DevTeam16_CSharp\csharp code\fifa-project-gokker\fifa-project-gokker\obj\Debug\fifa_project_gokker.LoginForm.resources
