@@ -54,15 +54,15 @@ namespace fifa_project_gokker
         private void MainForm_Load(object sender, EventArgs e)
         {
             loadTeams();
-            System.Threading.Thread.Sleep(500);
+            AntiDepressivaPilletjeNemen();
             loadUsers();
-            System.Threading.Thread.Sleep(500);
+            AntiDepressivaPilletjeNemen();
             loadWedstrijden();
-            System.Threading.Thread.Sleep(500);
+            AntiDepressivaPilletjeNemen();
             loadTypes();
-            System.Threading.Thread.Sleep(500);
+            AntiDepressivaPilletjeNemen();
             loadTeamsComboBox();
-            System.Threading.Thread.Sleep(500);
+            AntiDepressivaPilletjeNemen();
 
             string path = "savedData";
 
@@ -301,7 +301,10 @@ namespace fifa_project_gokker
                 }
             }
         }
-        
+        public void AntiDepressivaPilletjeNemen()
+        {
+            System.Threading.Thread.Sleep(500);
+        }
         private void loginToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm();
