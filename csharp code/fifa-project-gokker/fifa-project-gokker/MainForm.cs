@@ -54,10 +54,15 @@ namespace fifa_project_gokker
         private void MainForm_Load(object sender, EventArgs e)
         {
             loadTeams();
+            System.Threading.Thread.Sleep(500);
             loadUsers();
+            System.Threading.Thread.Sleep(500);
             loadWedstrijden();
+            System.Threading.Thread.Sleep(500);
             loadTypes();
+            System.Threading.Thread.Sleep(500);
             loadTeamsComboBox();
+            System.Threading.Thread.Sleep(500);
 
             string path = "savedData";
 
