@@ -93,6 +93,8 @@ namespace fifa_project_gokker
         
         public void loadTeams()
         {
+            Program.teamList.Clear();
+
             try
             {
                 WebClient client = new WebClient();
@@ -127,8 +129,6 @@ namespace fifa_project_gokker
             {
                 MessageBox.Show("Unexpected character encountered, er is een foute api link aangegeven");
             }
-
-            Program.teamList.Clear();
         }
         
         public void loadUsers()
@@ -166,12 +166,25 @@ namespace fifa_project_gokker
                     Program.wedstrijdlist.Add(wedstrijd);
                 }
 
-                for ( int i = 0; i < Program.wedstrijdlist.Count; i++ )
+                for (int i = 0; i < Program.wedstrijdlist.Count; i++)
                 {
-                    string wedstrijd = String.Format("{0} - {1}", Program.wedstrijdlist[i].team1, Program.wedstrijdlist[i].team2);
+                    string team1 = "";
+                    string team2 = "";
+
+                    for ( int x = 0; x < Program.teamList.Count; x++ )
+                    {
+                        if ( Program.teamList[x].id.ToString() == Program.wedstrijdlist[i].team1 )
+                        {
+                            team1 = Program.teamList[x].teamName;
+                        }
+                        if ( Program.teamList[x].id.ToString() == Program.wedstrijdlist[i].team2 )
+                        {
+                            team2 = Program.teamList[x].teamName;
+                        }
+                    }
+                    string wedstrijd = String.Format("{0} - {1}", team1, team2);
                     tournamentsListBox.Items.Add(wedstrijd);
                 }
-
             }
             catch (System.Net.WebException)
             {
@@ -323,6 +336,7 @@ namespace fifa_project_gokker
             Program.gokkerCollection.makeGokker(gokkerName);
 
             MessageBox.Show("de gokker is aangemaakt");
+            nameLabel.Text = gokkerName;
             makeBetGroupBox.Enabled = true;
         }
     }
