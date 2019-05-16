@@ -143,9 +143,24 @@
             // amountNumeric
             // 
             this.amountNumeric.Location = new System.Drawing.Point(212, 39);
+            this.amountNumeric.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.amountNumeric.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             this.amountNumeric.Name = "amountNumeric";
             this.amountNumeric.Size = new System.Drawing.Size(60, 20);
             this.amountNumeric.TabIndex = 4;
+            this.amountNumeric.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
             // amountLabel
             // 
