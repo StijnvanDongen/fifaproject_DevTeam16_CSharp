@@ -52,11 +52,13 @@
             this.gokkerNameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.MakeAGokkerGroupBox = new System.Windows.Forms.GroupBox();
             this.makeBetGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.endScoreTeam2Numeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.endScoreTeam1Numeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.amountNumeric)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.MakeAGokkerGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // teamsListBox
@@ -81,7 +83,7 @@
             this.makeBetGroupBox.Controls.Add(this.typeBetLabel);
             this.makeBetGroupBox.Controls.Add(this.nameLabel);
             this.makeBetGroupBox.Enabled = false;
-            this.makeBetGroupBox.Location = new System.Drawing.Point(13, 290);
+            this.makeBetGroupBox.Location = new System.Drawing.Point(13, 313);
             this.makeBetGroupBox.Name = "makeBetGroupBox";
             this.makeBetGroupBox.Size = new System.Drawing.Size(775, 100);
             this.makeBetGroupBox.TabIndex = 3;
@@ -205,7 +207,7 @@
             // sluitenToolStripMenuItem
             // 
             this.sluitenToolStripMenuItem.Name = "sluitenToolStripMenuItem";
-            this.sluitenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sluitenToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.sluitenToolStripMenuItem.Text = "Sluiten";
             this.sluitenToolStripMenuItem.Click += new System.EventHandler(this.sluitenToolStripMenuItem_Click);
             // 
@@ -249,7 +251,7 @@
             // 
             // gokkerNameTextBox
             // 
-            this.gokkerNameTextBox.Location = new System.Drawing.Point(113, 262);
+            this.gokkerNameTextBox.Location = new System.Drawing.Point(106, 16);
             this.gokkerNameTextBox.Name = "gokkerNameTextBox";
             this.gokkerNameTextBox.Size = new System.Drawing.Size(195, 20);
             this.gokkerNameTextBox.TabIndex = 7;
@@ -257,7 +259,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 265);
+            this.label1.Location = new System.Drawing.Point(6, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 13);
             this.label1.TabIndex = 8;
@@ -265,7 +267,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(314, 261);
+            this.button1.Location = new System.Drawing.Point(312, 14);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(109, 23);
             this.button1.TabIndex = 9;
@@ -273,15 +275,26 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // MakeAGokkerGroupBox
+            // 
+            this.MakeAGokkerGroupBox.Controls.Add(this.button1);
+            this.MakeAGokkerGroupBox.Controls.Add(this.gokkerNameTextBox);
+            this.MakeAGokkerGroupBox.Controls.Add(this.label1);
+            this.MakeAGokkerGroupBox.Enabled = false;
+            this.MakeAGokkerGroupBox.Location = new System.Drawing.Point(13, 259);
+            this.MakeAGokkerGroupBox.Name = "MakeAGokkerGroupBox";
+            this.MakeAGokkerGroupBox.Size = new System.Drawing.Size(775, 48);
+            this.MakeAGokkerGroupBox.TabIndex = 10;
+            this.MakeAGokkerGroupBox.TabStop = false;
+            this.MakeAGokkerGroupBox.Text = "Maak een gokker aan";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 402);
+            this.ClientSize = new System.Drawing.Size(800, 429);
             this.ControlBox = false;
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.gokkerNameTextBox);
+            this.Controls.Add(this.MakeAGokkerGroupBox);
             this.Controls.Add(this.betsListBox);
             this.Controls.Add(this.tournamentsListBox);
             this.Controls.Add(this.makeBetGroupBox);
@@ -299,6 +312,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.amountNumeric)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.MakeAGokkerGroupBox.ResumeLayout(false);
+            this.MakeAGokkerGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -329,6 +344,7 @@
         private System.Windows.Forms.TextBox gokkerNameTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox MakeAGokkerGroupBox;
     }
 }
 

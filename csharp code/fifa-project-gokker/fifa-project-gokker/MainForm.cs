@@ -304,7 +304,7 @@ namespace fifa_project_gokker
 
             if (Program.isLoggedIn)
             {
-                makeBetGroupBox.Enabled = true;
+                MakeAGokkerGroupBox.Enabled = true;
             }
         }
 
@@ -313,6 +313,9 @@ namespace fifa_project_gokker
             gokkerName = gokkerNameTextBox.Text;
 
             Program.gokkerCollection.makeGokker(gokkerName);
+
+            MessageBox.Show("de gokker is aangemaakt");
+            makeBetGroupBox.Enabled = true;
         }
     }
 }
