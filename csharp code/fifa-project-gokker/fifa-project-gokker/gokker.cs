@@ -3,14 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace fifa_project_gokker
 {
     class gokker
     {
         public string name { get; set; }
-        public int money { get; set; }
+        public decimal money { get; set; }
+        
         public List<weddenschap> weddenschappen = new List<weddenschap>();
+        public Label moneylabel;
+
+        public void updatlabels()
+        {
+            moneylabel.Text = "$" + money.ToString();
+        }
 
         public void makebet(string betType, int betValue, string betWinningTeam, int betScore1, int betScore2)
         {
@@ -27,6 +35,8 @@ namespace fifa_project_gokker
             bet.eindscore2 = betScore2;
 
             weddenschappen.Add(bet);
+
+            
         }
     }
 }

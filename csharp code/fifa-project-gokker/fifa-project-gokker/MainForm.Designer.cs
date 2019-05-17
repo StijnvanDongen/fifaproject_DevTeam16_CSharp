@@ -53,6 +53,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.MakeAGokkerGroupBox = new System.Windows.Forms.GroupBox();
+            this.moneyLabel = new System.Windows.Forms.Label();
             this.makeBetGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.endScoreTeam2Numeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.endScoreTeam1Numeric)).BeginInit();
@@ -71,6 +72,7 @@
             // 
             // makeBetGroupBox
             // 
+            this.makeBetGroupBox.Controls.Add(this.moneyLabel);
             this.makeBetGroupBox.Controls.Add(this.makeBetButton);
             this.makeBetGroupBox.Controls.Add(this.endScoreTeam2Numeric);
             this.makeBetGroupBox.Controls.Add(this.endScoreTeam1Numeric);
@@ -303,6 +305,15 @@
             this.MakeAGokkerGroupBox.TabStop = false;
             this.MakeAGokkerGroupBox.Text = "Maak een gokker aan";
             // 
+            // moneyLabel
+            // 
+            this.moneyLabel.AutoSize = true;
+            this.moneyLabel.Location = new System.Drawing.Point(54, 20);
+            this.moneyLabel.Name = "moneyLabel";
+            this.moneyLabel.Size = new System.Drawing.Size(13, 13);
+            this.moneyLabel.TabIndex = 11;
+            this.moneyLabel.Text = "$";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -360,6 +371,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox MakeAGokkerGroupBox;
+        private System.Windows.Forms.Label moneyLabel;
     }
 }
 

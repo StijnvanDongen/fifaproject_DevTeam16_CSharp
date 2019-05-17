@@ -21,10 +21,20 @@ namespace fifa_project_gokker
         public string gokkerName = "";
         public string JSON = "";
 
+        gokker[] gokkerarray = new gokker[1];
+
         public MainForm()
         {
             InitializeComponent();
+            gokkerarray[0] = new gokker() { name = gokkerName, money = 50, moneylabel = moneyLabel};
+
+            gokkerarray[0].updatlabels();
+
         }
+
+        
+
+        
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
