@@ -33,11 +33,7 @@ namespace fifa_project_gokker
             gokkerarray[0].updatlabels();
 
         }
-
         
-
-        
-
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -296,7 +292,7 @@ namespace fifa_project_gokker
             {
                 for (int i = 0; i < Program.gokkerCollection.gokkers.Count; i++)
                 {
-                    if (Program.gokkerCollection.gokkers[i].name == gokkerName)
+                    if (Program.gokkerCollection.gokkers[i].name == nameLabel.Text)
                     {
                         money = Program.gokkerCollection.gokkers[i].money;
                     }
@@ -305,7 +301,7 @@ namespace fifa_project_gokker
                         
                 if (money < amountNumeric.Value)
                 {
-                    MessageBox.Show("je heeft niet geld ");
+                    MessageBox.Show("je hebt niet genoeg geld!!!");
                     return;
                 }
                 
@@ -358,8 +354,7 @@ namespace fifa_project_gokker
             }
             
         }
-            
-
+          
         public void AntiDepressivaPilletjeNemen()
         {
             System.Threading.Thread.Sleep(500);
@@ -378,12 +373,56 @@ namespace fifa_project_gokker
         private void button1_Click(object sender, EventArgs e)
         {
             gokkerName = gokkerNameTextBox.Text;
+            
+            
 
             Program.gokkerCollection.makeGokker(gokkerName);
 
             MessageBox.Show("de gokker is aangemaakt");
             nameLabel.Text = gokkerName;
             makeBetGroupBox.Enabled = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (gokkerNameTextBox.Text == "Motherload")
+            {
+                for (int i = 0; i < Program.gokkerCollection.gokkers.Count; i++)
+                {
+                    if (Program.gokkerCollection.gokkers[i].name == gokkerName)
+                    {
+                        Program.gokkerCollection.gokkers[i].money = Program.gokkerCollection.gokkers[i].money + 50000;
+                        moneyLabel.Text = Program.gokkerCollection.gokkers[i].money.ToString();
+                        return;
+                    }
+                }
+
+            }
+
+            if (gokkerNameTextBox.Text == "Klapaucius")
+            {
+                for (int i = 0; i < Program.gokkerCollection.gokkers.Count; i++)
+                {
+                    if (Program.gokkerCollection.gokkers[i].name == gokkerName)
+                    {
+                        Program.gokkerCollection.gokkers[i].money = Program.gokkerCollection.gokkers[i].money + 1000;
+                        moneyLabel.Text = Program.gokkerCollection.gokkers[i].money.ToString();
+                        return;
+                    }
+                }
+            }
+            if (gokkerNameTextBox.Text == "Rosebud")
+            {
+                for (int i = 0; i < Program.gokkerCollection.gokkers.Count; i++)
+                {
+                    if (Program.gokkerCollection.gokkers[i].name == gokkerName)
+                    {
+                        Program.gokkerCollection.gokkers[i].money = Program.gokkerCollection.gokkers[i].money + 1000;
+                        moneyLabel.Text = Program.gokkerCollection.gokkers[i].money.ToString();
+                        return;
+                    }
+                }
+            }
         }
     }
 }

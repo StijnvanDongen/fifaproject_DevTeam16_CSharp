@@ -17,7 +17,7 @@ namespace fifa_project_gokker
 
         public void updatlabels()
         {
-            moneylabel.Text = "$" + money.ToString();
+            moneylabel.Text = money.ToString();
         }
 
         public void makebet(string betType, int betValue, string betWinningTeam, int betScore1, int betScore2)
