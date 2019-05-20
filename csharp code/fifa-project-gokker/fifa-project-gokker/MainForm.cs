@@ -89,11 +89,10 @@ namespace fifa_project_gokker
                 {
                     for (int j = 0; j < Program.gokkerCollection.gokkers[i].weddenschappen.Count; j++)
                     {
-                        string newBet = Program.gokkerCollection.gokkers[i].name + ": " +
-                                            Program.gokkerCollection.gokkers[i].weddenschappen[j].type + " , €" +
-                                            Program.gokkerCollection.gokkers[i].weddenschappen[j].inzet + ",- , " +
+                        string newBet = Program.gokkerCollection.gokkers[i].weddenschappen[j].type + " , " +
+                                            Program.gokkerCollection.gokkers[i].weddenschappen[j].inzet + " , " +
                                             Program.gokkerCollection.gokkers[i].weddenschappen[j].winnendeTeam + " , " +
-                                            Program.gokkerCollection.gokkers[i].weddenschappen[j].eindscore1 + "-" +
+                                            Program.gokkerCollection.gokkers[i].weddenschappen[j].eindscore1 + " , " +
                                             Program.gokkerCollection.gokkers[i].weddenschappen[j].eindscore2;
 
                         betsListBox.Items.Add(newBet);
@@ -193,7 +192,6 @@ namespace fifa_project_gokker
                             team2 = Program.teamList[x].teamName;
                         }
                     }
-
                     string wedstrijd = String.Format("{0} - {1}", team1, team2);
                     tournamentsListBox.Items.Add(wedstrijd);
                 }
@@ -305,7 +303,7 @@ namespace fifa_project_gokker
                                        (int)endScoreTeam2Numeric.Value);
                         if (typeBetComboBox.GetItemText(typeBetComboBox.SelectedItem) == "Tripple or Nothing")
                         {
-                            string newBet = nameLabel.Text + ", " + typeBetComboBox.GetItemText(typeBetComboBox.SelectedItem) + " , " +
+                            string newBet = typeBetComboBox.GetItemText(typeBetComboBox.SelectedItem) + " , " +
                                         (int)amountNumeric.Value + " , " +
                                         winningTeamComboBox.SelectedItem.ToString() + " , " +
                                         (int)endScoreTeam1Numeric.Value + " , " +
@@ -316,7 +314,7 @@ namespace fifa_project_gokker
 
                         if (typeBetComboBox.GetItemText(typeBetComboBox.SelectedItem) == "Double or Nothing")
                         {
-                            string newBet = nameLabel.Text + ", " + typeBetComboBox.GetItemText(typeBetComboBox.SelectedItem) + ", " +
+                            string newBet = typeBetComboBox.GetItemText(typeBetComboBox.SelectedItem) + " , " +
                                         (int)amountNumeric.Value + " , " +
                                         winningTeamComboBox.SelectedItem.ToString();
 
