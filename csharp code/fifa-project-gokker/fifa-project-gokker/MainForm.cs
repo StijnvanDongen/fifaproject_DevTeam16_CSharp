@@ -15,9 +15,9 @@ namespace fifa_project_gokker
 {
     public partial class MainForm : Form
     {
-        const string API_URL = "http://mennovermeulen.ga/api/apihandler.php";
-        const string LOGINAPI_URL = "http://mennovermeulen.ga/api/loginapi.php";
-        const string WEDSTRIJDENAPI_URL = "http://mennovermeulen.ga/api/wedstrijdenapi.php";
+        const string API_URL = "http://mennovermeulen.ga/api/apihandler.php?key=RBUUo3AZDy";
+        const string LOGINAPI_URL = "http://mennovermeulen.ga/api/loginapi.php?key=dguaetj9lD";
+        const string WEDSTRIJDENAPI_URL = "http://mennovermeulen.ga/api/wedstrijdenapi.php?key=Yl1EkejMXd";
         public string gokkerName = "";
         public string JSON = "";
 
