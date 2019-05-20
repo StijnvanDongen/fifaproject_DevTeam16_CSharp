@@ -21,6 +21,8 @@ namespace fifa_project_gokker
         public string gokkerName = "";
         public string JSON = "";
 
+        decimal money;
+
         gokker[] gokkerarray = new gokker[1];
 
         public MainForm()
@@ -296,6 +298,22 @@ namespace fifa_project_gokker
                 {
                     if (Program.gokkerCollection.gokkers[i].name == gokkerName)
                     {
+                        money = Program.gokkerCollection.gokkers[i].money;
+                    }
+                }
+                        //money = decimal.Parse(moneyLabel.Text);
+                        
+                if (money < amountNumeric.Value)
+                {
+                    MessageBox.Show("je heeft niet geld ");
+                    return;
+                }
+                
+
+                for (int i = 0; i < Program.gokkerCollection.gokkers.Count; i++)
+                {
+                    if (Program.gokkerCollection.gokkers[i].name == gokkerName)
+                    {
                         Program.gokkerCollection.gokkers[i].makebet(typeBetComboBox.GetItemText(typeBetComboBox.SelectedItem),
                                        (int)amountNumeric.Value,
                                        winningTeamComboBox.SelectedItem.ToString(),
@@ -333,10 +351,12 @@ namespace fifa_project_gokker
 
                         Program.gokkerCollection.gokkers[i].money = money;
                         moneyLabel.Text = money.ToString();
+                        
                     }
                 }
                 
             }
+            
         }
             
 
