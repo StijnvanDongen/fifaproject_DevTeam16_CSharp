@@ -15,6 +15,7 @@ namespace fifa_project_gokker
             gokker Gokker = new gokker();
 
             Gokker.name = gokkerName;
+            Gokker.money = 50;
 
             gokkers.Add(Gokker);
         }

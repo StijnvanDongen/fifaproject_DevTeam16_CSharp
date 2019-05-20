@@ -30,6 +30,7 @@
         {
             this.teamsListBox = new System.Windows.Forms.ListBox();
             this.makeBetGroupBox = new System.Windows.Forms.GroupBox();
+            this.moneyLabel = new System.Windows.Forms.Label();
             this.makeBetButton = new System.Windows.Forms.Button();
             this.endScoreTeam2Numeric = new System.Windows.Forms.NumericUpDown();
             this.endScoreTeam1Numeric = new System.Windows.Forms.NumericUpDown();
@@ -53,7 +54,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.MakeAGokkerGroupBox = new System.Windows.Forms.GroupBox();
-            this.moneyLabel = new System.Windows.Forms.Label();
             this.makeBetGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.endScoreTeam2Numeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.endScoreTeam1Numeric)).BeginInit();
@@ -91,6 +91,14 @@
             this.makeBetGroupBox.TabIndex = 3;
             this.makeBetGroupBox.TabStop = false;
             this.makeBetGroupBox.Text = "Maak een Weddenschap";
+            // 
+            // moneyLabel
+            // 
+            this.moneyLabel.AutoSize = true;
+            this.moneyLabel.Location = new System.Drawing.Point(54, 20);
+            this.moneyLabel.Name = "moneyLabel";
+            this.moneyLabel.Size = new System.Drawing.Size(0, 13);
+            this.moneyLabel.TabIndex = 11;
             // 
             // makeBetButton
             // 
@@ -304,15 +312,6 @@
             this.MakeAGokkerGroupBox.TabIndex = 10;
             this.MakeAGokkerGroupBox.TabStop = false;
             this.MakeAGokkerGroupBox.Text = "Maak een gokker aan";
-            // 
-            // moneyLabel
-            // 
-            this.moneyLabel.AutoSize = true;
-            this.moneyLabel.Location = new System.Drawing.Point(54, 20);
-            this.moneyLabel.Name = "moneyLabel";
-            this.moneyLabel.Size = new System.Drawing.Size(13, 13);
-            this.moneyLabel.TabIndex = 11;
-            this.moneyLabel.Text = "$";
             // 
             // MainForm
             // 

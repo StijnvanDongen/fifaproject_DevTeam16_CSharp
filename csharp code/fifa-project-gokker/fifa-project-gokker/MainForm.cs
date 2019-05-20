@@ -247,7 +247,7 @@ namespace fifa_project_gokker
                 endScoreTeam2Numeric.Enabled = true;
             }
         }
-        
+
         private void makeBetButton_Click(object sender, EventArgs e)
         {
             int counter = 0;
@@ -258,23 +258,23 @@ namespace fifa_project_gokker
                 counter = counter + 1;
             }
 
-            if (typeBetComboBox.SelectedItem != null && 
-                amountNumeric.Value <= 4 && 
+            if (typeBetComboBox.SelectedItem != null &&
+                amountNumeric.Value <= 4 &&
                 typeBetComboBox.SelectedItem.ToString() == "Double or Nothing")
             {
                 MessageBox.Show("Vul een inzet in van minimaal 5");
                 counter = counter + 1;
             }
 
-            if (typeBetComboBox.SelectedItem != null && 
-                amountNumeric.Value == 0 && 
+            if (typeBetComboBox.SelectedItem != null &&
+                amountNumeric.Value == 0 &&
                 typeBetComboBox.SelectedItem.ToString() == "Tripple or Nothing")
             {
                 MessageBox.Show("Vul een inzet in van minimaal 15");
                 counter = counter + 1;
             }
 
-            if (typeBetComboBox.SelectedItem != null && 
+            if (typeBetComboBox.SelectedItem != null &&
                 winningTeamComboBox.SelectedItem == null)
             {
                 MessageBox.Show("Vul het winnende team in");
@@ -292,7 +292,7 @@ namespace fifa_project_gokker
 
             if (counter == 0)
             {
-                for (int i = 0; i < Program.gokkerCollection.gokkers.Count ; i++)
+                for (int i = 0; i < Program.gokkerCollection.gokkers.Count; i++)
                 {
                     if (Program.gokkerCollection.gokkers[i].name == gokkerName)
                     {
@@ -322,8 +322,24 @@ namespace fifa_project_gokker
                         }
                     }
                 }
+                
+                for (int i = 0; i < Program.gokkerCollection.gokkers.Count; i++)
+                {
+                    if (Program.gokkerCollection.gokkers[i].name == gokkerName)
+                    {
+                        int nummer = (int)amountNumeric.Value;
+                        int geld = (int)Program.gokkerCollection.gokkers[i].money;
+                        int money = geld - nummer;
+
+                        Program.gokkerCollection.gokkers[i].money = money;
+                        moneyLabel.Text = money.ToString();
+                    }
+                }
+                
             }
         }
+            
+
         public void AntiDepressivaPilletjeNemen()
         {
             System.Threading.Thread.Sleep(500);

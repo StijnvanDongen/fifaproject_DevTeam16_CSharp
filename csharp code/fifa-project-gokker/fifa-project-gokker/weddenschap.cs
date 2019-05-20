@@ -10,9 +10,13 @@ namespace fifa_project_gokker
     {
         public string betName { get; set; }
         public string type { get; set; }
-        public int inzet { get; set; }
+        public decimal inzet { get; set; }
         public string winnendeTeam { get; set; }
         public int eindscore1 { get; set; }
         public int eindscore2 { get; set; }
+        
+
+        
+
     }
 }
