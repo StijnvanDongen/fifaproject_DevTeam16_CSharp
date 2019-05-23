@@ -30,6 +30,7 @@
         {
             this.teamsListBox = new System.Windows.Forms.ListBox();
             this.makeBetGroupBox = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.moneyLabel = new System.Windows.Forms.Label();
             this.makeBetButton = new System.Windows.Forms.Button();
             this.endScoreTeam2Numeric = new System.Windows.Forms.NumericUpDown();
@@ -55,7 +56,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.MakeAGokkerGroupBox = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.makeBetGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.endScoreTeam2Numeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.endScoreTeam1Numeric)).BeginInit();
@@ -94,6 +94,15 @@
             this.makeBetGroupBox.TabIndex = 3;
             this.makeBetGroupBox.TabStop = false;
             this.makeBetGroupBox.Text = "Maak een Weddenschap";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(54, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(13, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "$";
             // 
             // moneyLabel
             // 
@@ -250,8 +259,8 @@
             // reloadTeamListToolStripMenuItem
             // 
             this.reloadTeamListToolStripMenuItem.Name = "reloadTeamListToolStripMenuItem";
-            this.reloadTeamListToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
-            this.reloadTeamListToolStripMenuItem.Text = "reload team list";
+            this.reloadTeamListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reloadTeamListToolStripMenuItem.Text = "reload lists";
             this.reloadTeamListToolStripMenuItem.Click += new System.EventHandler(this.reloadTeamListToolStripMenuItem_Click);
             // 
             // loginToolStripMenuItem1
@@ -326,15 +335,6 @@
             this.button2.Text = "Use code";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(54, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(13, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "$";
             // 
             // MainForm
             // 
