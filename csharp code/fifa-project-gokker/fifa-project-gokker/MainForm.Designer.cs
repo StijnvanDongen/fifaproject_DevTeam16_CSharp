@@ -55,9 +55,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.MakeAGokkerGroupBox = new System.Windows.Forms.GroupBox();
-            this.gokkerLabel = new System.Windows.Forms.Label();
-            this.existingGokkerComboBox = new System.Windows.Forms.ComboBox();
             this.useExistingGokkerButton = new System.Windows.Forms.Button();
+            this.existingGokkerComboBox = new System.Windows.Forms.ComboBox();
+            this.gokkerLabel = new System.Windows.Forms.Label();
+            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.makeBetGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.endScoreTeam2Numeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.endScoreTeam1Numeric)).BeginInit();
@@ -239,6 +240,7 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.refreshToolStripMenuItem,
             this.sluitenToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -247,7 +249,7 @@
             // sluitenToolStripMenuItem
             // 
             this.sluitenToolStripMenuItem.Name = "sluitenToolStripMenuItem";
-            this.sluitenToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.sluitenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sluitenToolStripMenuItem.Text = "Sluiten";
             this.sluitenToolStripMenuItem.Click += new System.EventHandler(this.sluitenToolStripMenuItem_Click);
             // 
@@ -262,7 +264,7 @@
             // reloadTeamListToolStripMenuItem
             // 
             this.reloadTeamListToolStripMenuItem.Name = "reloadTeamListToolStripMenuItem";
-            this.reloadTeamListToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.reloadTeamListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.reloadTeamListToolStripMenuItem.Text = "reload team list";
             this.reloadTeamListToolStripMenuItem.Click += new System.EventHandler(this.reloadTeamListToolStripMenuItem_Click);
             // 
@@ -331,23 +333,6 @@
             this.MakeAGokkerGroupBox.TabStop = false;
             this.MakeAGokkerGroupBox.Text = "Maak een gokker aan";
             // 
-            // gokkerLabel
-            // 
-            this.gokkerLabel.AutoSize = true;
-            this.gokkerLabel.Location = new System.Drawing.Point(438, 19);
-            this.gokkerLabel.Name = "gokkerLabel";
-            this.gokkerLabel.Size = new System.Drawing.Size(98, 13);
-            this.gokkerLabel.TabIndex = 11;
-            this.gokkerLabel.Text = "use existing gokker";
-            // 
-            // existingGokkerComboBox
-            // 
-            this.existingGokkerComboBox.FormattingEnabled = true;
-            this.existingGokkerComboBox.Location = new System.Drawing.Point(542, 16);
-            this.existingGokkerComboBox.Name = "existingGokkerComboBox";
-            this.existingGokkerComboBox.Size = new System.Drawing.Size(121, 21);
-            this.existingGokkerComboBox.TabIndex = 12;
-            // 
             // useExistingGokkerButton
             // 
             this.useExistingGokkerButton.Location = new System.Drawing.Point(670, 14);
@@ -357,6 +342,30 @@
             this.useExistingGokkerButton.Text = "Use";
             this.useExistingGokkerButton.UseVisualStyleBackColor = true;
             this.useExistingGokkerButton.Click += new System.EventHandler(this.useExistingGokkerButton_Click);
+            // 
+            // existingGokkerComboBox
+            // 
+            this.existingGokkerComboBox.FormattingEnabled = true;
+            this.existingGokkerComboBox.Location = new System.Drawing.Point(542, 16);
+            this.existingGokkerComboBox.Name = "existingGokkerComboBox";
+            this.existingGokkerComboBox.Size = new System.Drawing.Size(121, 21);
+            this.existingGokkerComboBox.TabIndex = 12;
+            // 
+            // gokkerLabel
+            // 
+            this.gokkerLabel.AutoSize = true;
+            this.gokkerLabel.Location = new System.Drawing.Point(438, 19);
+            this.gokkerLabel.Name = "gokkerLabel";
+            this.gokkerLabel.Size = new System.Drawing.Size(98, 13);
+            this.gokkerLabel.TabIndex = 11;
+            this.gokkerLabel.Text = "use existing gokker";
+            // 
+            // refreshToolStripMenuItem
+            // 
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.refreshToolStripMenuItem.Text = "Refresh";
+            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -420,6 +429,7 @@
         private System.Windows.Forms.Button useExistingGokkerButton;
         private System.Windows.Forms.ComboBox existingGokkerComboBox;
         private System.Windows.Forms.Label gokkerLabel;
+        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
     }
 }
 

@@ -33,11 +33,6 @@ namespace fifa_project_gokker
             gokkerarray[0].updatlabels();
 
         }
-        
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void sluitenToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -87,13 +82,25 @@ namespace fifa_project_gokker
                 {
                     for (int j = 0; j < Program.gokkerCollection.gokkers[i].weddenschappen.Count; j++)
                     {
-                        string newBet = Program.gokkerCollection.gokkers[i].weddenschappen[j].type + " , " +
-                                            Program.gokkerCollection.gokkers[i].weddenschappen[j].inzet + " , " +
-                                            Program.gokkerCollection.gokkers[i].weddenschappen[j].winnendeTeam + " , " +
-                                            Program.gokkerCollection.gokkers[i].weddenschappen[j].eindscore1 + " , " +
-                                            Program.gokkerCollection.gokkers[i].weddenschappen[j].eindscore2;
+                        if (Program.gokkerCollection.gokkers[i].weddenschappen[j].type == "Double or Nothing")
+                        {
+                            string bet = Program.gokkerCollection.gokkers[i].weddenschappen[j].type + " , " +
+                                         Program.gokkerCollection.gokkers[i].weddenschappen[j].inzet + " , " +
+                                         Program.gokkerCollection.gokkers[i].weddenschappen[j].winnendeTeam;
 
-                        betsListBox.Items.Add(newBet);
+                            betsListBox.Items.Add(bet);
+                        }
+
+                        if (Program.gokkerCollection.gokkers[i].weddenschappen[j].type == "Tripple or Nothing")
+                        {
+                            string bet = Program.gokkerCollection.gokkers[i].weddenschappen[j].type + " , " +
+                                         Program.gokkerCollection.gokkers[i].weddenschappen[j].inzet + " , " +
+                                         Program.gokkerCollection.gokkers[i].weddenschappen[j].winnendeTeam + " , " +
+                                         Program.gokkerCollection.gokkers[i].weddenschappen[j].eindscore1 + " , " +
+                                         Program.gokkerCollection.gokkers[i].weddenschappen[j].eindscore2;
+
+                            betsListBox.Items.Add(bet);
+                        }
                     }
                 }
             }
@@ -102,6 +109,7 @@ namespace fifa_project_gokker
         public void loadTeams()
         {
             Program.teamList.Clear();
+            teamsListBox.Items.Clear();
 
             try
             {
@@ -164,6 +172,7 @@ namespace fifa_project_gokker
         {
             try
             {
+                tournamentsListBox.Items.Clear();
                 WebClient webClient = new WebClient();
                 string wedstrijdenjson = webClient.DownloadString(WEDSTRIJDENAPI_URL);
 
@@ -352,6 +361,37 @@ namespace fifa_project_gokker
             }
             
         }
+
+        public void loadwedstrijdenlistbox()
+        {
+            betsListBox.Items.Clear();
+
+            for (int i = 0; i < Program.gokkerCollection.gokkers.Count; i++)
+            {
+                for (int j = 0; j < Program.gokkerCollection.gokkers[i].weddenschappen.Count; j++)
+                {
+                    if (Program.gokkerCollection.gokkers[i].weddenschappen[j].type == "Double or Nothing")
+                    {
+                        string bet = Program.gokkerCollection.gokkers[i].weddenschappen[j].type + " , " +
+                                     Program.gokkerCollection.gokkers[i].weddenschappen[j].inzet + " , " +
+                                     Program.gokkerCollection.gokkers[i].weddenschappen[j].winnendeTeam;
+
+                        betsListBox.Items.Add(bet);
+                    }
+
+                    if (Program.gokkerCollection.gokkers[i].weddenschappen[j].type == "Tripple or Nothing")
+                    {
+                        string bet = Program.gokkerCollection.gokkers[i].weddenschappen[j].type + " , " +
+                                     Program.gokkerCollection.gokkers[i].weddenschappen[j].inzet + " , " +
+                                     Program.gokkerCollection.gokkers[i].weddenschappen[j].winnendeTeam + " , " +
+                                     Program.gokkerCollection.gokkers[i].weddenschappen[j].eindscore1 + " , " +
+                                     Program.gokkerCollection.gokkers[i].weddenschappen[j].eindscore2;
+
+                        betsListBox.Items.Add(bet);
+                    }
+                }
+            }
+        }
           
         public void AntiDepressivaPilletjeNemen()
         {
@@ -459,6 +499,15 @@ namespace fifa_project_gokker
             endScoreTeam1Numeric.Value = 0;
             endScoreTeam2Numeric.Value = 0;
             amountNumeric.Value = 5;
+        }
+
+        private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            loadTeams();
+            AntiDepressivaPilletjeNemen();
+            loadWedstrijden();
+            AntiDepressivaPilletjeNemen();
+            loadwedstrijdenlistbox();
         }
     }
 }
