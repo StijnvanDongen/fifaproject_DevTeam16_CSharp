@@ -30,6 +30,7 @@
         {
             this.teamsListBox = new System.Windows.Forms.ListBox();
             this.makeBetGroupBox = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.moneyLabel = new System.Windows.Forms.Label();
             this.makeBetButton = new System.Windows.Forms.Button();
             this.endScoreTeam2Numeric = new System.Windows.Forms.NumericUpDown();
@@ -54,8 +55,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.MakeAGokkerGroupBox = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.gokkerLabel = new System.Windows.Forms.Label();
+            this.existingGokkerComboBox = new System.Windows.Forms.ComboBox();
+            this.useExistingGokkerButton = new System.Windows.Forms.Button();
             this.makeBetGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.endScoreTeam2Numeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.endScoreTeam1Numeric)).BeginInit();
@@ -95,10 +97,19 @@
             this.makeBetGroupBox.TabStop = false;
             this.makeBetGroupBox.Text = "Maak een Weddenschap";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(87, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(13, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "$";
+            // 
             // moneyLabel
             // 
             this.moneyLabel.AutoSize = true;
-            this.moneyLabel.Location = new System.Drawing.Point(67, 20);
+            this.moneyLabel.Location = new System.Drawing.Point(103, 20);
             this.moneyLabel.Name = "moneyLabel";
             this.moneyLabel.Size = new System.Drawing.Size(0, 13);
             this.moneyLabel.TabIndex = 11;
@@ -193,6 +204,7 @@
             this.typeBetComboBox.Size = new System.Drawing.Size(121, 21);
             this.typeBetComboBox.TabIndex = 2;
             this.typeBetComboBox.SelectedIndexChanged += new System.EventHandler(this.typeBetComboBox_SelectedIndexChanged);
+            this.typeBetComboBox.Enter += new System.EventHandler(this.typeBetComboBox_Enter);
             // 
             // typeBetLabel
             // 
@@ -305,7 +317,9 @@
             // 
             // MakeAGokkerGroupBox
             // 
-            this.MakeAGokkerGroupBox.Controls.Add(this.button2);
+            this.MakeAGokkerGroupBox.Controls.Add(this.useExistingGokkerButton);
+            this.MakeAGokkerGroupBox.Controls.Add(this.existingGokkerComboBox);
+            this.MakeAGokkerGroupBox.Controls.Add(this.gokkerLabel);
             this.MakeAGokkerGroupBox.Controls.Add(this.button1);
             this.MakeAGokkerGroupBox.Controls.Add(this.gokkerNameTextBox);
             this.MakeAGokkerGroupBox.Controls.Add(this.label1);
@@ -317,24 +331,32 @@
             this.MakeAGokkerGroupBox.TabStop = false;
             this.MakeAGokkerGroupBox.Text = "Maak een gokker aan";
             // 
-            // button2
+            // gokkerLabel
             // 
-            this.button2.Location = new System.Drawing.Point(427, 13);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(109, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Use code";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.gokkerLabel.AutoSize = true;
+            this.gokkerLabel.Location = new System.Drawing.Point(438, 19);
+            this.gokkerLabel.Name = "gokkerLabel";
+            this.gokkerLabel.Size = new System.Drawing.Size(98, 13);
+            this.gokkerLabel.TabIndex = 11;
+            this.gokkerLabel.Text = "use existing gokker";
             // 
-            // label2
+            // existingGokkerComboBox
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(54, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(13, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "$";
+            this.existingGokkerComboBox.FormattingEnabled = true;
+            this.existingGokkerComboBox.Location = new System.Drawing.Point(542, 16);
+            this.existingGokkerComboBox.Name = "existingGokkerComboBox";
+            this.existingGokkerComboBox.Size = new System.Drawing.Size(121, 21);
+            this.existingGokkerComboBox.TabIndex = 12;
+            // 
+            // useExistingGokkerButton
+            // 
+            this.useExistingGokkerButton.Location = new System.Drawing.Point(670, 14);
+            this.useExistingGokkerButton.Name = "useExistingGokkerButton";
+            this.useExistingGokkerButton.Size = new System.Drawing.Size(75, 23);
+            this.useExistingGokkerButton.TabIndex = 13;
+            this.useExistingGokkerButton.Text = "Use";
+            this.useExistingGokkerButton.UseVisualStyleBackColor = true;
+            this.useExistingGokkerButton.Click += new System.EventHandler(this.useExistingGokkerButton_Click);
             // 
             // MainForm
             // 
@@ -394,8 +416,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox MakeAGokkerGroupBox;
         private System.Windows.Forms.Label moneyLabel;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button useExistingGokkerButton;
+        private System.Windows.Forms.ComboBox existingGokkerComboBox;
+        private System.Windows.Forms.Label gokkerLabel;
     }
 }
 

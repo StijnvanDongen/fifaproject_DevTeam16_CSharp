@@ -297,14 +297,12 @@ namespace fifa_project_gokker
                         money = Program.gokkerCollection.gokkers[i].money;
                     }
                 }
-                        //money = decimal.Parse(moneyLabel.Text);
                         
                 if (money < amountNumeric.Value)
                 {
                     MessageBox.Show("je hebt niet genoeg geld!!!");
                     return;
                 }
-                
 
                 for (int i = 0; i < Program.gokkerCollection.gokkers.Count; i++)
                 {
@@ -359,6 +357,7 @@ namespace fifa_project_gokker
         {
             System.Threading.Thread.Sleep(500);
         }
+
         private void loginToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm();
@@ -367,62 +366,99 @@ namespace fifa_project_gokker
             if (Program.isLoggedIn)
             {
                 MakeAGokkerGroupBox.Enabled = true;
+                refreshExistingGokkers();
+            }
+        }
+
+        public void refreshExistingGokkers()
+        {
+            existingGokkerComboBox.Items.Clear();
+
+            for (int i = 0; i < Program.gokkerCollection.gokkers.Count; i++)
+            {
+                existingGokkerComboBox.Items.Add(Program.gokkerCollection.gokkers[i].name);
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (gokkerNameTextBox.Text == "Motherload" || gokkerNameTextBox.Text == "Klapaucius" || gokkerNameTextBox.Text == "Rosebud")
+            {
+                if (gokkerNameTextBox.Text == "Motherload")
+                {
+                    for (int i = 0; i < Program.gokkerCollection.gokkers.Count; i++)
+                    {
+                        if (Program.gokkerCollection.gokkers[i].name == gokkerName)
+                        {
+                            Program.gokkerCollection.gokkers[i].money = Program.gokkerCollection.gokkers[i].money + 50000;
+                            moneyLabel.Text = Program.gokkerCollection.gokkers[i].money.ToString();
+                            return;
+                        }
+                    }
+
+                }
+
+                if (gokkerNameTextBox.Text == "Klapaucius")
+                {
+                    for (int i = 0; i < Program.gokkerCollection.gokkers.Count; i++)
+                    {
+                        if (Program.gokkerCollection.gokkers[i].name == gokkerName)
+                        {
+                            Program.gokkerCollection.gokkers[i].money = Program.gokkerCollection.gokkers[i].money + 1000;
+                            moneyLabel.Text = Program.gokkerCollection.gokkers[i].money.ToString();
+                            return;
+                        }
+                    }
+                }
+
+                if (gokkerNameTextBox.Text == "Rosebud")
+                {
+                    for (int i = 0; i < Program.gokkerCollection.gokkers.Count; i++)
+                    {
+                        if (Program.gokkerCollection.gokkers[i].name == gokkerName)
+                        {
+                            Program.gokkerCollection.gokkers[i].money = Program.gokkerCollection.gokkers[i].money + 1000;
+                            moneyLabel.Text = Program.gokkerCollection.gokkers[i].money.ToString();
+                            return;
+                        }
+                    }
+                }
+
+                return;
+            }
+
             gokkerName = gokkerNameTextBox.Text;
             
-            
-
             Program.gokkerCollection.makeGokker(gokkerName);
 
             MessageBox.Show("de gokker is aangemaakt");
             nameLabel.Text = gokkerName;
             makeBetGroupBox.Enabled = true;
+            refreshExistingGokkers();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void useExistingGokkerButton_Click(object sender, EventArgs e)
         {
-            if (gokkerNameTextBox.Text == "Motherload")
-            {
-                for (int i = 0; i < Program.gokkerCollection.gokkers.Count; i++)
-                {
-                    if (Program.gokkerCollection.gokkers[i].name == gokkerName)
-                    {
-                        Program.gokkerCollection.gokkers[i].money = Program.gokkerCollection.gokkers[i].money + 50000;
-                        moneyLabel.Text = Program.gokkerCollection.gokkers[i].money.ToString();
-                        return;
-                    }
-                }
+            gokkerName = existingGokkerComboBox.SelectedItem.ToString();
+            nameLabel.Text = gokkerName;
+            makeBetGroupBox.Enabled = true;
+            moneyLabel.Text = "0";
 
+            for (int i = 0; i < Program.gokkerCollection.gokkers.Count; i++)
+            {
+                if (Program.gokkerCollection.gokkers[i].name == gokkerName)
+                {
+                    moneyLabel.Text = Program.gokkerCollection.gokkers[i].money.ToString();
+                }
             }
 
-            if (gokkerNameTextBox.Text == "Klapaucius")
-            {
-                for (int i = 0; i < Program.gokkerCollection.gokkers.Count; i++)
-                {
-                    if (Program.gokkerCollection.gokkers[i].name == gokkerName)
-                    {
-                        Program.gokkerCollection.gokkers[i].money = Program.gokkerCollection.gokkers[i].money + 1000;
-                        moneyLabel.Text = Program.gokkerCollection.gokkers[i].money.ToString();
-                        return;
-                    }
-                }
-            }
-            if (gokkerNameTextBox.Text == "Rosebud")
-            {
-                for (int i = 0; i < Program.gokkerCollection.gokkers.Count; i++)
-                {
-                    if (Program.gokkerCollection.gokkers[i].name == gokkerName)
-                    {
-                        Program.gokkerCollection.gokkers[i].money = Program.gokkerCollection.gokkers[i].money + 1000;
-                        moneyLabel.Text = Program.gokkerCollection.gokkers[i].money.ToString();
-                        return;
-                    }
-                }
-            }
+        }
+
+        private void typeBetComboBox_Enter(object sender, EventArgs e)
+        {
+            endScoreTeam1Numeric.Value = 0;
+            endScoreTeam2Numeric.Value = 0;
+            amountNumeric.Value = 5;
         }
     }
 }
