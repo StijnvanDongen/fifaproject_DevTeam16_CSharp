@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace fifa_project_gokker
 {
-    class weddenschap
+    public class weddenschap
     {
         public string betName { get; set; }
         public string type { get; set; }
@@ -14,9 +15,17 @@ namespace fifa_project_gokker
         public string winnendeTeam { get; set; }
         public int eindscore1 { get; set; }
         public int eindscore2 { get; set; }
-        
 
-        
-
+        public decimal uitbetalen(string winner, ComboBox acombobox)
+        {
+            if (acombobox.SelectedItem.ToString() == "Double or Nothing")
+            {
+                if (winner == winnendeTeam)
+                    return (inzet * 2);
+                else
+                    return (0 - inzet);
+            }
+            return inzet;
+        }
     }
 }

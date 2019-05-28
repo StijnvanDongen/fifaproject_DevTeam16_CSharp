@@ -55,14 +55,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.MakeAGokkerGroupBox = new System.Windows.Forms.GroupBox();
-<<<<<<< HEAD
-            this.button2 = new System.Windows.Forms.Button();
-=======
             this.useExistingGokkerButton = new System.Windows.Forms.Button();
             this.existingGokkerComboBox = new System.Windows.Forms.ComboBox();
             this.gokkerLabel = new System.Windows.Forms.Label();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
->>>>>>> master
             this.makeBetGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.endScoreTeam2Numeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.endScoreTeam1Numeric)).BeginInit();
@@ -105,11 +101,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-<<<<<<< HEAD
-            this.label2.Location = new System.Drawing.Point(54, 20);
-=======
             this.label2.Location = new System.Drawing.Point(87, 20);
->>>>>>> master
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(13, 13);
             this.label2.TabIndex = 12;
@@ -273,11 +265,7 @@
             // 
             this.reloadTeamListToolStripMenuItem.Name = "reloadTeamListToolStripMenuItem";
             this.reloadTeamListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-<<<<<<< HEAD
-            this.reloadTeamListToolStripMenuItem.Text = "reload lists";
-=======
             this.reloadTeamListToolStripMenuItem.Text = "reload team list";
->>>>>>> master
             this.reloadTeamListToolStripMenuItem.Click += new System.EventHandler(this.reloadTeamListToolStripMenuItem_Click);
             // 
             // loginToolStripMenuItem1
@@ -355,8 +343,6 @@
             this.useExistingGokkerButton.UseVisualStyleBackColor = true;
             this.useExistingGokkerButton.Click += new System.EventHandler(this.useExistingGokkerButton_Click);
             // 
-<<<<<<< HEAD
-=======
             // existingGokkerComboBox
             // 
             this.existingGokkerComboBox.FormattingEnabled = true;
@@ -381,7 +367,6 @@
             this.refreshToolStripMenuItem.Text = "Refresh";
             this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
->>>>>>> master
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
