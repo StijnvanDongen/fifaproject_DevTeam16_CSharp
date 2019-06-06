@@ -17,7 +17,7 @@ namespace fifa_project_gokker
         public int eindscore1 { get; set; }
         public int eindscore2 { get; set; }
         public string betMadeBy { get; set; }
-        public int idwinnendeteam { get; set; }
+        public int idGame { get; set; }
 
         public decimal uitbetalen(string winner, ComboBox acombobox)
         {

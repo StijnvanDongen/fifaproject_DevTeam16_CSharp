@@ -108,7 +108,7 @@ namespace fifa_project_gokker
                                          Program.gokkerCollection.gokkers[i].weddenschappen[j].type + " , " +
                                          Program.gokkerCollection.gokkers[i].weddenschappen[j].inzet + " , " +
                                          Program.gokkerCollection.gokkers[i].weddenschappen[j].winnendeTeam + " , " +
-                                         Program.gokkerCollection.gokkers[i].weddenschappen[j].idwinnendeteam;
+                                         Program.gokkerCollection.gokkers[i].weddenschappen[j].idGame;
 
 
                             betsListBox.Items.Add(bet);
@@ -122,7 +122,7 @@ namespace fifa_project_gokker
                                          Program.gokkerCollection.gokkers[i].weddenschappen[j].winnendeTeam + " , " +
                                          Program.gokkerCollection.gokkers[i].weddenschappen[j].eindscore1 + " , " +
                                          Program.gokkerCollection.gokkers[i].weddenschappen[j].eindscore2 + " , " +
-                                         Program.gokkerCollection.gokkers[i].weddenschappen[j].idwinnendeteam;
+                                         Program.gokkerCollection.gokkers[i].weddenschappen[j].idGame;
 
                             betsListBox.Items.Add(bet);
                         }
@@ -428,7 +428,7 @@ namespace fifa_project_gokker
                         string bet = Program.gokkerCollection.gokkers[i].weddenschappen[j].type + " , " +
                                      Program.gokkerCollection.gokkers[i].weddenschappen[j].inzet + " , " +
                                      Program.gokkerCollection.gokkers[i].weddenschappen[j].winnendeTeam + " , " +
-                                     Program.gokkerCollection.gokkers[i].weddenschappen[j].idwinnendeteam;
+                                     Program.gokkerCollection.gokkers[i].weddenschappen[j].idGame;
 
                         betsListBox.Items.Add(bet);
                     }
@@ -440,7 +440,7 @@ namespace fifa_project_gokker
                                      Program.gokkerCollection.gokkers[i].weddenschappen[j].winnendeTeam + " , " +
                                      Program.gokkerCollection.gokkers[i].weddenschappen[j].eindscore1 + " , " +
                                      Program.gokkerCollection.gokkers[i].weddenschappen[j].eindscore2 + " , " +
-                                     Program.gokkerCollection.gokkers[i].weddenschappen[j].idwinnendeteam;
+                                     Program.gokkerCollection.gokkers[i].weddenschappen[j].idGame;
 
                         betsListBox.Items.Add(bet);
                     }
@@ -582,7 +582,7 @@ namespace fifa_project_gokker
                         betspergokkerListBox.Items.Add(  Program.gokkerCollection.gokkers[i].weddenschappen[j].id + " - " +
                                                          Program.gokkerCollection.gokkers[i].weddenschappen[j].type + " - " + 
                                                          Program.gokkerCollection.gokkers[i].weddenschappen[j].winnendeTeam + " - " +
-                                                         Program.gokkerCollection.gokkers[i].weddenschappen[j].idwinnendeteam);
+                                                         Program.gokkerCollection.gokkers[i].weddenschappen[j].idGame);
                     }
                 }
             }
@@ -608,18 +608,32 @@ namespace fifa_project_gokker
                             if (Program.gokkerCollection.gokkers[j].weddenschappen[betspergokkerListBox.SelectedIndex].eindscore1 > Program.gokkerCollection.gokkers[j].weddenschappen[betspergokkerListBox.SelectedIndex].eindscore2)
                             {
                                 //team 1 wint
+                                for (int q = 0; q < Program.wedstrijdlist.Count; q++)
+                                {
+                                    if (Program.wedstrijdlist[q].team1 == Program.gokkerCollection.gokkers[j].weddenschappen[betspergokkerListBox.SelectedIndex].winnendeTeam)
+                                    {
+                                        MessageBox.Show(Program.wedstrijdlist[q].team1);
+                                    }
+                                }
                                 return false;
                             }
                             else
                             {
                                 //team 2 wint
+                                for (int q = 0; q < Program.wedstrijdlist.Count; q++)
+                                {
+                                    if (Program.wedstrijdlist[q].team2 == Program.gokkerCollection.gokkers[j].weddenschappen[betspergokkerListBox.SelectedIndex].winnendeTeam)
+                                    {
+                                        MessageBox.Show(Program.wedstrijdlist[q].team2);
+                                    }
+                                }
                                 return true;
                             }
                         }
 
                         if (Program.gokkerCollection.gokkers[j].weddenschappen[betspergokkerListBox.SelectedIndex].type == "Double or Nothing")
                         {
-                            if (winningteam() == false)
+                            if (winningteam() == false )
                             {
                                 var payout = Program.gokkerCollection.gokkers[j].weddenschappen[betspergokkerListBox.SelectedIndex].inzet * 2;
                                 Program.gokkerCollection.gokkers[j].money = Program.gokkerCollection.gokkers[j].money + payout;

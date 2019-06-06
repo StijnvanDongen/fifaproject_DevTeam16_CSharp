@@ -35,7 +35,7 @@ namespace fifa_project_gokker
             bet.eindscore1 = betScore1;
             bet.eindscore2 = betScore2;
             bet.betMadeBy = betMadeBy;
-            bet.idwinnendeteam = idwinnendeteam;
+            bet.idGame = idwinnendeteam;
 
             weddenschappen.Add(bet);
 
