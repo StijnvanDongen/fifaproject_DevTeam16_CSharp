@@ -603,9 +603,28 @@ namespace fifa_project_gokker
                     {
                         var betdata = Program.gokkerCollection.gokkers[j].weddenschappen[betspergokkerListBox.SelectedIndex].id.ToString();
 
+                        bool winningteam()
+                        {
+                            if (Program.gokkerCollection.gokkers[j].weddenschappen[betspergokkerListBox.SelectedIndex].eindscore1 > Program.gokkerCollection.gokkers[j].weddenschappen[betspergokkerListBox.SelectedIndex].eindscore2)
+                            {
+                                //team 1 wint
+                                return false;
+                            }
+                            else
+                            {
+                                //team 2 wint
+                                return true;
+                            }
+                        }
+
                         if (Program.gokkerCollection.gokkers[j].weddenschappen[betspergokkerListBox.SelectedIndex].type == "Double or Nothing")
                         {
-                            if (check if bet is good)
+                            if (winningteam() == false)
+                            {
+                                var payout = Program.gokkerCollection.gokkers[j].weddenschappen[betspergokkerListBox.SelectedIndex].inzet * 2;
+                                Program.gokkerCollection.gokkers[j].money = Program.gokkerCollection.gokkers[j].money + payout;
+                            }
+                            else if (winningteam() == true)
                             {
                                 var payout = Program.gokkerCollection.gokkers[j].weddenschappen[betspergokkerListBox.SelectedIndex].inzet * 2;
                                 Program.gokkerCollection.gokkers[j].money = Program.gokkerCollection.gokkers[j].money + payout;
@@ -614,11 +633,16 @@ namespace fifa_project_gokker
 
                         if (Program.gokkerCollection.gokkers[j].weddenschappen[betspergokkerListBox.SelectedIndex].type == "Tripple or Nothing")
                         {
-                            if (check if bet is good)
-                                {
-                                    var payout = Program.gokkerCollection.gokkers[j].weddenschappen[betspergokkerListBox.SelectedIndex].inzet * 3;
-                                    Program.gokkerCollection.gokkers[j].money = Program.gokkerCollection.gokkers[j].money + payout;
-                                }    
+                            if (winningteam() == false)
+                            {
+                                var payout = Program.gokkerCollection.gokkers[j].weddenschappen[betspergokkerListBox.SelectedIndex].inzet * 3;
+                                Program.gokkerCollection.gokkers[j].money = Program.gokkerCollection.gokkers[j].money + payout;
+                            }
+                            else if (winningteam() == true)
+                            {
+                                var payout = Program.gokkerCollection.gokkers[j].weddenschappen[betspergokkerListBox.SelectedIndex].inzet * 3;
+                                Program.gokkerCollection.gokkers[j].money = Program.gokkerCollection.gokkers[j].money + payout;
+                            }
                         }
 
                         moneyLabel.Text = Program.gokkerCollection.gokkers[j].money.ToString();
