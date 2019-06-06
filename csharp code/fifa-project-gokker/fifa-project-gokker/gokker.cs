@@ -20,19 +20,22 @@ namespace fifa_project_gokker
             moneylabel.Text = money.ToString();
         }
 
-        public void makebet(string betType, int betValue, string betWinningTeam, int betScore1, int betScore2)
+        public void makebet(int id, string betType, int betValue, string betWinningTeam, int betScore1, int betScore2, string betMadeBy, int idwinnendeteam)
         {
             int i = weddenschappen.Count() + 1;
             string betName = "bet" + i.ToString();
 
             weddenschap bet = new weddenschap();
 
+            bet.id = id;
             bet.betName = betName;
             bet.type = betType;
             bet.inzet = betValue;
             bet.winnendeTeam = betWinningTeam;
             bet.eindscore1 = betScore1;
             bet.eindscore2 = betScore2;
+            bet.betMadeBy = betMadeBy;
+            bet.idwinnendeteam = idwinnendeteam;
 
             weddenschappen.Add(bet);
 

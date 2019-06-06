@@ -9,10 +9,14 @@ namespace fifa_project_gokker
 {
     public class dataWedstrijden
     {
+        [JsonProperty("id")]
+        public int id { get; set; } 
+
         [JsonProperty("team1")]
         public string team1 { get; set; }
 
         [JsonProperty("team2")]
         public string team2 { get; set; }
+
     }
 }

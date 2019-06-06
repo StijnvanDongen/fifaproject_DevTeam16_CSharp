@@ -30,6 +30,8 @@
         {
             this.teamsListBox = new System.Windows.Forms.ListBox();
             this.makeBetGroupBox = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.WedstrijdIDComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.moneyLabel = new System.Windows.Forms.Label();
             this.makeBetButton = new System.Windows.Forms.Button();
@@ -45,6 +47,7 @@
             this.nameLabel = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sluitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.teamsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reloadTeamListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,13 +61,17 @@
             this.useExistingGokkerButton = new System.Windows.Forms.Button();
             this.existingGokkerComboBox = new System.Windows.Forms.ComboBox();
             this.gokkerLabel = new System.Windows.Forms.Label();
-            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.payoutGroupBox = new System.Windows.Forms.GroupBox();
+            this.betspergokkerListBox = new System.Windows.Forms.ListBox();
+            this.avaliblecomboBox = new System.Windows.Forms.ComboBox();
+            this.payoutButton = new System.Windows.Forms.Button();
             this.makeBetGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.endScoreTeam2Numeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.endScoreTeam1Numeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.amountNumeric)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.MakeAGokkerGroupBox.SuspendLayout();
+            this.payoutGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // teamsListBox
@@ -72,11 +79,13 @@
             this.teamsListBox.FormattingEnabled = true;
             this.teamsListBox.Location = new System.Drawing.Point(13, 28);
             this.teamsListBox.Name = "teamsListBox";
-            this.teamsListBox.Size = new System.Drawing.Size(150, 225);
+            this.teamsListBox.Size = new System.Drawing.Size(206, 225);
             this.teamsListBox.TabIndex = 1;
             // 
             // makeBetGroupBox
             // 
+            this.makeBetGroupBox.Controls.Add(this.label3);
+            this.makeBetGroupBox.Controls.Add(this.WedstrijdIDComboBox);
             this.makeBetGroupBox.Controls.Add(this.label2);
             this.makeBetGroupBox.Controls.Add(this.moneyLabel);
             this.makeBetGroupBox.Controls.Add(this.makeBetButton);
@@ -97,6 +106,23 @@
             this.makeBetGroupBox.TabIndex = 3;
             this.makeBetGroupBox.TabStop = false;
             this.makeBetGroupBox.Text = "Maak een Weddenschap";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(299, 69);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 13);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Wedstrijd ID:";
+            // 
+            // WedstrijdIDComboBox
+            // 
+            this.WedstrijdIDComboBox.FormattingEnabled = true;
+            this.WedstrijdIDComboBox.Location = new System.Drawing.Point(373, 66);
+            this.WedstrijdIDComboBox.Name = "WedstrijdIDComboBox";
+            this.WedstrijdIDComboBox.Size = new System.Drawing.Size(121, 21);
+            this.WedstrijdIDComboBox.TabIndex = 13;
             // 
             // label2
             // 
@@ -233,7 +259,7 @@
             this.loginToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1085, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -246,10 +272,17 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // refreshToolStripMenuItem
+            // 
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.refreshToolStripMenuItem.Text = "Refresh";
+            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
+            // 
             // sluitenToolStripMenuItem
             // 
             this.sluitenToolStripMenuItem.Name = "sluitenToolStripMenuItem";
-            this.sluitenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sluitenToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.sluitenToolStripMenuItem.Text = "Sluiten";
             this.sluitenToolStripMenuItem.Click += new System.EventHandler(this.sluitenToolStripMenuItem_Click);
             // 
@@ -264,7 +297,7 @@
             // reloadTeamListToolStripMenuItem
             // 
             this.reloadTeamListToolStripMenuItem.Name = "reloadTeamListToolStripMenuItem";
-            this.reloadTeamListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reloadTeamListToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.reloadTeamListToolStripMenuItem.Text = "reload team list";
             this.reloadTeamListToolStripMenuItem.Click += new System.EventHandler(this.reloadTeamListToolStripMenuItem_Click);
             // 
@@ -278,17 +311,17 @@
             // tournamentsListBox
             // 
             this.tournamentsListBox.FormattingEnabled = true;
-            this.tournamentsListBox.Location = new System.Drawing.Point(169, 28);
+            this.tournamentsListBox.Location = new System.Drawing.Point(229, 28);
             this.tournamentsListBox.Name = "tournamentsListBox";
-            this.tournamentsListBox.Size = new System.Drawing.Size(150, 225);
+            this.tournamentsListBox.Size = new System.Drawing.Size(229, 225);
             this.tournamentsListBox.TabIndex = 5;
             // 
             // betsListBox
             // 
             this.betsListBox.FormattingEnabled = true;
-            this.betsListBox.Location = new System.Drawing.Point(325, 28);
+            this.betsListBox.Location = new System.Drawing.Point(464, 28);
             this.betsListBox.Name = "betsListBox";
-            this.betsListBox.Size = new System.Drawing.Size(463, 225);
+            this.betsListBox.Size = new System.Drawing.Size(324, 225);
             this.betsListBox.TabIndex = 6;
             // 
             // gokkerNameTextBox
@@ -360,19 +393,52 @@
             this.gokkerLabel.TabIndex = 11;
             this.gokkerLabel.Text = "use existing gokker";
             // 
-            // refreshToolStripMenuItem
+            // payoutGroupBox
             // 
-            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.refreshToolStripMenuItem.Text = "Refresh";
-            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
+            this.payoutGroupBox.Controls.Add(this.betspergokkerListBox);
+            this.payoutGroupBox.Controls.Add(this.avaliblecomboBox);
+            this.payoutGroupBox.Controls.Add(this.payoutButton);
+            this.payoutGroupBox.Location = new System.Drawing.Point(795, 27);
+            this.payoutGroupBox.Name = "payoutGroupBox";
+            this.payoutGroupBox.Size = new System.Drawing.Size(279, 386);
+            this.payoutGroupBox.TabIndex = 11;
+            this.payoutGroupBox.TabStop = false;
+            this.payoutGroupBox.Text = "Payout box";
+            // 
+            // betspergokkerListBox
+            // 
+            this.betspergokkerListBox.FormattingEnabled = true;
+            this.betspergokkerListBox.Location = new System.Drawing.Point(9, 47);
+            this.betspergokkerListBox.Name = "betspergokkerListBox";
+            this.betspergokkerListBox.Size = new System.Drawing.Size(264, 303);
+            this.betspergokkerListBox.TabIndex = 12;
+            // 
+            // avaliblecomboBox
+            // 
+            this.avaliblecomboBox.FormattingEnabled = true;
+            this.avaliblecomboBox.Location = new System.Drawing.Point(9, 20);
+            this.avaliblecomboBox.Name = "avaliblecomboBox";
+            this.avaliblecomboBox.Size = new System.Drawing.Size(264, 21);
+            this.avaliblecomboBox.TabIndex = 3;
+            this.avaliblecomboBox.SelectedIndexChanged += new System.EventHandler(this.avaliblecomboBox_SelectedIndexChanged);
+            // 
+            // payoutButton
+            // 
+            this.payoutButton.Location = new System.Drawing.Point(7, 355);
+            this.payoutButton.Name = "payoutButton";
+            this.payoutButton.Size = new System.Drawing.Size(266, 25);
+            this.payoutButton.TabIndex = 1;
+            this.payoutButton.Text = "Payout selected bets";
+            this.payoutButton.UseVisualStyleBackColor = true;
+            this.payoutButton.Click += new System.EventHandler(this.payoutButton_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 429);
+            this.ClientSize = new System.Drawing.Size(1085, 429);
             this.ControlBox = false;
+            this.Controls.Add(this.payoutGroupBox);
             this.Controls.Add(this.MakeAGokkerGroupBox);
             this.Controls.Add(this.betsListBox);
             this.Controls.Add(this.tournamentsListBox);
@@ -393,6 +459,7 @@
             this.menuStrip1.PerformLayout();
             this.MakeAGokkerGroupBox.ResumeLayout(false);
             this.MakeAGokkerGroupBox.PerformLayout();
+            this.payoutGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -430,6 +497,12 @@
         private System.Windows.Forms.ComboBox existingGokkerComboBox;
         private System.Windows.Forms.Label gokkerLabel;
         private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
+        private System.Windows.Forms.GroupBox payoutGroupBox;
+        private System.Windows.Forms.ComboBox avaliblecomboBox;
+        private System.Windows.Forms.Button payoutButton;
+        private System.Windows.Forms.ListBox betspergokkerListBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox WedstrijdIDComboBox;
     }
 }
 
