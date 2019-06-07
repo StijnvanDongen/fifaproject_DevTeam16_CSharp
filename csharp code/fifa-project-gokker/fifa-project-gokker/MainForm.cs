@@ -72,6 +72,7 @@ namespace fifa_project_gokker
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            // hier word alle data ingeladen.
             loadTeams();
             AntiDepressivaPilletjeNemen();
             loadUsers();
@@ -87,15 +88,16 @@ namespace fifa_project_gokker
             string path = "savedData";
             string path2 = "idCounterSaved";
 
+            // er word gekeken of er een bestand bestaat waar opgeslagen data in aanwezig is.
             if (File.Exists(path))
             {
 
                 List<gokker> LoadedData = null;
 
                 LoadedData = JsonConvert.DeserializeObject<List<gokker>>(File.ReadAllText(@"savedData"));
-
+                
                 Program.gokkerCollection.gokkers = LoadedData;
-
+                // opgeslagen data is opgeslagen in de applicate
                 for (int i = 0; i < Program.gokkerCollection.gokkers.Count; i++)
                 {
                     for (int j = 0; j < Program.gokkerCollection.gokkers[i].weddenschappen.Count; j++)
@@ -104,6 +106,7 @@ namespace fifa_project_gokker
 
                         if (Program.gokkerCollection.gokkers[i].weddenschappen[j].type == "Double or Nothing")
                         {
+                            // de opgehaalde Double or Nothing weddenschappen worden opgebouwd en weergegeven op het scherm
                             string bet = Program.gokkerCollection.gokkers[i].weddenschappen[j].id + " , " +
                                          Program.gokkerCollection.gokkers[i].weddenschappen[j].type + " , " +
                                          Program.gokkerCollection.gokkers[i].weddenschappen[j].inzet + " , " +
@@ -116,6 +119,7 @@ namespace fifa_project_gokker
 
                         if (Program.gokkerCollection.gokkers[i].weddenschappen[j].type == "Tripple or Nothing")
                         {
+                            // de opgehaalde Tripple or Nothing weddenschappen worden opgebouwd en weergegeven op het scherm
                             string bet = Program.gokkerCollection.gokkers[i].weddenschappen[j].id + " , " +
                                          Program.gokkerCollection.gokkers[i].weddenschappen[j].type + " , " +
                                          Program.gokkerCollection.gokkers[i].weddenschappen[j].inzet + " , " +
@@ -132,6 +136,7 @@ namespace fifa_project_gokker
 
             if (File.Exists(path2))
             {
+                // er word een id opgehaald voor het geven van een id aan de weddenschappen
                 int Loadedid = 0;
                 Loadedid = JsonConvert.DeserializeObject<int>(File.ReadAllText(@"idCounterSaved"));
                 idCounter = Loadedid;
@@ -140,9 +145,11 @@ namespace fifa_project_gokker
         
         public void loadTeams()
         {
+            // hier worden de teamlists leeg gemaakt
             Program.teamList.Clear();
             teamsListBox.Items.Clear();
 
+            // er word een webclient aan gemaakt voor het downloaden van de data uit de api en die data word in de applicatie geladen.
             try
             {
                 WebClient client = new WebClient();
@@ -181,6 +188,7 @@ namespace fifa_project_gokker
         
         public void loadUsers()
         {
+            // hier worden de gebruikers (accounts van de website) ingeladen via de api doormiddel van een webclient.
             try
             {
                 WebClient webClient = new WebClient();
@@ -202,8 +210,9 @@ namespace fifa_project_gokker
         
         public void loadWedstrijden()
         {
+            // eerst word de combobox leeg gemaakt 
             WedstrijdIDComboBox.Items.Clear();
-
+            // en nu worden alle wedstrijden overal ingeladen (ook via een webclient die download vanaf de api)
             try
             {
                 tournamentsListBox.Items.Clear();
@@ -214,11 +223,13 @@ namespace fifa_project_gokker
 
                 foreach (dataWedstrijden wedstrijd in wedstrijden)
                 {
+                    // ingeladen wedstrijden worden in de list gezet
                     Program.wedstrijdlist.Add(wedstrijd);
                 }
 
                 for (int i = 0; i < Program.wedstrijdlist.Count; i++)
                 {
+                    // hier worden de teams aan de juiste wedstrijden gekoppeld en weergeven in de listbox voor wedstrijden en in de combobox.
                     string team1 = "";
                     string team2 = "";
                     int id = Program.wedstrijdlist[i].id;
@@ -249,6 +260,7 @@ namespace fifa_project_gokker
         
         private void reloadTeamListToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // hier kan je nog wat data opnieuw inladen die uit de api komt.
             teamsListBox.Items.Clear();
             loadTeams();
 
@@ -258,6 +270,7 @@ namespace fifa_project_gokker
         
         public void loadTypes()
         {
+            // hier worden de types double/tripple or nothing nog toegevoegd
             string[] types = new string[2];
             types[0] = "Double or Nothing";
             types[1] = "Tripple or Nothing";
@@ -268,6 +281,7 @@ namespace fifa_project_gokker
 
         public void loadTeamsComboBox()
         {
+            // met deze forloop worden alle teams in de combobox voor het gokken gezet
             for (int i = 0; i < teamsListBox.Items.Count ; i++)
             {
                 string[] teams = new string[teamsListBox.Items.Count];
@@ -279,6 +293,7 @@ namespace fifa_project_gokker
 
         private void typeBetComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // dit is zodat als je een double or nothing weddenschap na een tripple or nothing plaatst je geen eind score kan invullen.
             if (typeBetComboBox.SelectedItem.ToString() == "Double or Nothing")
             {
                 endScoreTeam1Numeric.Enabled = false;
@@ -298,7 +313,7 @@ namespace fifa_project_gokker
 
             if(WedstrijdIDComboBox.SelectedItem == null)
             {
-                MessageBox.Show("ey lul vul een wedstrijd id in");
+                MessageBox.Show("vul een wedstrijd id in");
             }
 
             if (typeBetComboBox.SelectedItem == null)
@@ -339,6 +354,9 @@ namespace fifa_project_gokker
                 counter = counter + 1;
             }
 
+            // als er iets fout gaat in het aanmaken van een weddenschap gaat de counter omhoog en gaat de applicatie niet door met het
+            // maken van de weddenschap totdat alles correct is 
+
             if (counter == 0)
             {
                 for (int i = 0; i < Program.gokkerCollection.gokkers.Count; i++)
@@ -362,7 +380,7 @@ namespace fifa_project_gokker
                     if (Program.gokkerCollection.gokkers[i].name == gokkerName)
                     {
                         idCounter = idCounter + 1;
-
+                        // hier word de weddenschap aangemaakt en de juiste waardes worden mee gegeven.
                         Program.gokkerCollection.gokkers[i].makebet(idCounter, typeBetComboBox.GetItemText(typeBetComboBox.SelectedItem),
                                        (int)amountNumeric.Value,
                                        winningTeamComboBox.SelectedItem.ToString(),
@@ -371,6 +389,8 @@ namespace fifa_project_gokker
                                        gokkerName,
                                        idwinnendeteam);
 
+                        // hier onder word er gekeken of de weddenschap double/tripple or nothing is en zo word bepaald hoe 
+                        // de weddenschap word weergeven in de lijst.
                         if (typeBetComboBox.GetItemText(typeBetComboBox.SelectedItem) == "Tripple or Nothing")
                         {
                             string newBet = idCounter + " , " +
@@ -399,6 +419,7 @@ namespace fifa_project_gokker
                 
                 for (int i = 0; i < Program.gokkerCollection.gokkers.Count; i++)
                 {
+                    // hier word er gezorgd dat het geld word afgeschreven van je gokker wanner de weddenschap geplaatst is.
                     if (Program.gokkerCollection.gokkers[i].name == gokkerName)
                     {
                         int nummer = (int)amountNumeric.Value;
@@ -417,6 +438,7 @@ namespace fifa_project_gokker
 
         public void loadwedstrijdenlistbox()
         {
+            // dit is zodat de wedstrijden list netjes kan worden ingeladen.
             betsListBox.Items.Clear();
 
             for (int i = 0; i < Program.gokkerCollection.gokkers.Count; i++)
@@ -450,11 +472,13 @@ namespace fifa_project_gokker
           
         public void AntiDepressivaPilletjeNemen()
         {
+            // dit is zodat het programma even 500ms wacht tot hij door gaat (voornamelijk gebruikt bij het opstarten op fouten te voorkomen.)
             System.Threading.Thread.Sleep(500);
         }
 
         private void loginToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            // hiermee word het login form geopent zodat je kan inloggen.
             LoginForm loginForm = new LoginForm();
             loginForm.ShowDialog();
 
@@ -467,6 +491,7 @@ namespace fifa_project_gokker
 
         public void refreshExistingGokkers()
         {
+            //voor het gebruiken van bestaande gokkers moeten de bestaande gokkers worden ingeladen dat word hier gedaan.
             existingGokkerComboBox.Items.Clear();
             avaliblecomboBox.Items.Clear();
 
@@ -479,6 +504,8 @@ namespace fifa_project_gokker
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // hier word alles gedaan voor de cheatcodes en vooral om onderscheid te maken tussen een gokker aanmaken en een cheatcode 
+            // invullen 
             if (gokkerNameTextBox.Text == "Motherload" || gokkerNameTextBox.Text == "Klapaucius" || gokkerNameTextBox.Text == "Rosebud")
             {
                 if (gokkerNameTextBox.Text == "Motherload")
@@ -523,6 +550,7 @@ namespace fifa_project_gokker
 
                 return;
             }
+            // als we zeker weten dat het niet om een cheatcode gaat word er een gokker aangemaakt.
 
             gokkerName = gokkerNameTextBox.Text;
             
@@ -536,6 +564,8 @@ namespace fifa_project_gokker
 
         private void useExistingGokkerButton_Click(object sender, EventArgs e)
         {
+            // deze knop word gebruikt als je een al bestaande gokker wilt gebruiken
+
             gokkerName = existingGokkerComboBox.SelectedItem.ToString();
             nameLabel.Text = gokkerName;
             makeBetGroupBox.Enabled = true;
@@ -560,6 +590,7 @@ namespace fifa_project_gokker
 
         private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // alles dat refreshed kan worden. 
             loadTeams();
             AntiDepressivaPilletjeNemen();
             loadWedstrijden();
@@ -570,6 +601,7 @@ namespace fifa_project_gokker
         private void avaliblecomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string name = avaliblecomboBox.SelectedItem.ToString();
+            // hier word er voor gezorgd dat de weddenschappen van de geselecteerde gokker in de list komen te staan 
 
             for (int i = 0; i < Program.gokkerCollection.gokkers.Count; i++)
             {
